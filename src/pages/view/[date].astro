@@ -1,0 +1,132 @@
+---
+import type { GetStaticPaths } from "astro";
+import Layout from "../../layouts/Layout.astro";
+import { getCollection } from "astro:content";
+
+export const getStaticPaths = (async () => {
+  const getMonthDays = (): Date[] => {
+    const now = new Date();
+    const start = new Date(now.getFullYear(), now.getMonth(), 1);
+    const end = new Date(now.getFullYear(), now.getMonth() + 1, 0);
+    const days: Date[] = [];
+    for (let d = new Date(start); d <= end; d.setDate(d.getDate() + 1)) {
+      days.push(new Date(d));
+    }
+    return days;
+  };
+
+  const rangeDate = (date: Date): string => {
+    return Intl.DateTimeFormat("en-US", {
+      month: "numeric",
+      day: "numeric",
+    })
+      .format(date)
+      .split("/")
+      .join("-");
+  };
+
+  const data = await getCollection("quotes");
+  const [d] = data;
+  const allCitations = Object.values(d.data.themes).flatMap(
+    (theme) => theme.citations,
+  );
+
+  return getMonthDays().map((date) => ({
+    params: { date: rangeDate(date) },
+    props: { allCitations },
+  }));
+}) satisfies GetStaticPaths;
+
+const { date } = Astro.params;
+
+const { defaultTheme = "auto", allCitations } = Astro.props;
+type Props = {
+  defaultTheme?: "auto" | "dark" | "light" | undefined;
+};
+---
+
+<Layout>
+  <article class="flex flex-col gap-16 md:pb-64">
+    <header>
+      <div class="flex items-center gap-2">
+        <h1 class="font-medium">My Website Refresh</h1>
+      </div>
+      <time class="text-muted-foreground">
+        {
+          Intl.DateTimeFormat("en-US", {
+            dateStyle: "medium",
+          }).format(new Date())
+        }
+      </time>
+    </header>
+    <div
+      class="prose prose-neutral dark:prose-invert prose-figcaption:text-muted-foreground prose-figcaption:-mt-3 prose-figcaption:mb-8 prose-figcaption:max-w-xl prose-figcaption:text-sm prose-img:mt-2 prose-ul:font-serif max-w-none"
+    >
+      <div class="grid grid-cols-1 gap-50">
+        {
+          allCitations.map((c) => (
+            <div class="flex flex-col">
+              <p class="text-foreground mb-6 font-serif text-[17px] leading-[26px] font-light">
+                {c.citation}
+              </p>
+              <p class="text-right font-serif text-muted-foreground">
+                — {c.auteur}.
+              </p>
+            </div>
+          ))
+        }
+      </div>
+    </div>
+    <aside></aside>
+  </article>
+</Layout>
+
+<script is:inline data-default-theme={defaultTheme}>
+  window.theme ??= (() => {
+    const defaultTheme =
+      document.currentScript.getAttribute("data-default-theme");
+    const storageKey = "theme";
+    const store =
+      typeof localStorage !== "undefined"
+        ? localStorage
+        : { getItem: () => null, setItem: () => {} };
+
+    const mediaMatcher = window.matchMedia("(prefers-color-scheme: light)");
+    let systemTheme = mediaMatcher.matches ? "light" : "dark";
+    mediaMatcher.addEventListener("change", (event) => {
+      systemTheme = event.matches ? "light" : "dark";
+      applyTheme(getTheme());
+    });
+
+    function applyTheme(theme) {
+      const resolvedTheme = theme === "auto" ? systemTheme : theme;
+      document.documentElement.dataset.theme = resolvedTheme;
+      document.documentElement.style.colorScheme = resolvedTheme;
+      document.dispatchEvent(
+        new CustomEvent("theme-changed", {
+          detail: { theme, systemTheme, defaultTheme },
+        }),
+      );
+    }
+
+    function setTheme(theme = defaultTheme) {
+      store.setItem(storageKey, theme);
+      applyTheme(theme);
+    }
+
+    function getTheme() {
+      return store.getItem(storageKey) || defaultTheme;
+    }
+
+    function getSystemTheme() {
+      return systemTheme;
+    }
+
+    function getDefaultTheme() {
+      return defaultTheme;
+    }
+
+    return { setTheme, getTheme, getSystemTheme, getDefaultTheme };
+  })();
+  theme.setTheme(theme.getTheme());
+</script>

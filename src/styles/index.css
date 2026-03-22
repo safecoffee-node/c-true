@@ -1,0 +1,123 @@
+@layer theme, base, components, utilities;
+
+@import "tailwindcss/theme.css" layer(theme);
+@import "tailwindcss/preflight.css" layer(base);
+@import "tailwindcss/utilities.css" layer(utilities);
+@import "tailwindcss";
+@plugin '@tailwindcss/typography';
+
+@layer utilities {
+  .text-muted-foreground {
+    color: var(--muted-foreground);
+  }
+  .text-foreground {
+    color: var(--foreground);
+  }
+
+  blockquote p {
+    color: var(--muted-foreground) !important;
+  }
+}
+
+:root {
+  --radius: 0.625rem;
+  --background: oklch(99.4% 0.00132 106);
+  --contrast: oklch(100% 0 0);
+  --foreground: oklch(14.7% 0.004 49.25);
+  --card: oklch(0% 0 0);
+  --card-foreground: oklch(14.7% 0.004 49.25);
+  --popover: oklch(100% 0 0);
+  --popover-foreground: oklch(14.7% 0.004 49.25);
+  --primary: oklch(21.6% 0.006 56.043);
+  --primary-foreground: oklch(98.5% 0.001 106.423);
+  --secondary: oklch(96% 0.001 106.424);
+  --secondary-foreground: oklch(21.6% 0.006 56.043);
+  --muted: oklch(97% 0.001 106.424);
+  --muted-foreground: oklch(55.3% 0.013 58.071);
+  --accent: oklch(97% 0.001 106.424);
+  --accent-foreground: oklch(21.6% 0.006 56.043);
+  --destructive: oklch(57.7% 0.245 27.325);
+  --border: oklch(92.3% 0.003 48.717);
+  --input: oklch(92.3% 0.003 48.717);
+  --ring: oklch(70.9% 0.01 56.259);
+  --chart-1: oklch(64.6% 0.222 41.116);
+  --chart-2: oklch(60% 0.118 184.704);
+  --chart-3: oklch(39.8% 0.07 227.392);
+  --chart-4: oklch(82.8% 0.189 84.429);
+  --chart-5: oklch(76.9% 0.188 70.08);
+  --sidebar: oklch(98.5% 0.001 106.423);
+  --sidebar-foreground: oklch(14.7% 0.004 49.25);
+  --sidebar-primary: oklch(21.6% 0.006 56.043);
+  --sidebar-primary-foreground: oklch(98.5% 0.001 106.423);
+  --sidebar-accent: oklch(97% 0.001 106.424);
+  --sidebar-accent-foreground: oklch(21.6% 0.006 56.043);
+  --sidebar-border: oklch(92.3% 0.003 48.717);
+  --sidebar-ring: oklch(70.9% 0.01 56.259);
+  --sh-identifier: hsl(var(--foreground));
+  --sh-keyword: #f47067;
+  --sh-string: #00a99a;
+  --sh-class: #8d85ff;
+  --sh-property: #4e8fdf;
+  --sh-entity: #6eafad;
+  --sh-jsxliterals: #bf7db6;
+  --sh-sign: #8996a3;
+  --sh-comment: hsl(var(--muted-foreground) / 60%);
+}
+
+[data-theme="dark"] {
+  --background: oklch(14.7% 0.004 49.25);
+  --contrast: oklch(10% 0.004 49.25);
+  --foreground: oklch(98.5% 0.001 106.423);
+  --card: oklch(21.6% 0.006 56.043);
+  --card-foreground: oklch(98.5% 0.001 106.423);
+  --popover: oklch(21.6% 0.006 56.043);
+  --popover-foreground: oklch(98.5% 0.001 106.423);
+  --primary: oklch(92.3% 0.003 48.717);
+  --primary-foreground: oklch(21.6% 0.006 56.043);
+  --secondary: oklch(26.8% 0.007 34.298);
+  --secondary-foreground: oklch(98.5% 0.001 106.423);
+  --muted: oklch(26.8% 0.007 34.298);
+  --muted-foreground: oklch(70.9% 0.01 56.259);
+  --accent: oklch(26.8% 0.007 34.298);
+  --accent-foreground: oklch(98.5% 0.001 106.423);
+  --destructive: oklch(70.4% 0.191 22.216);
+  --border: oklch(100% 0 0 / 0.13);
+  --input: oklch(100% 0 0 / 0.15);
+  --ring: oklch(55.3% 0.013 58.071);
+  --chart-1: oklch(48.8% 0.243 264.376);
+  --chart-2: oklch(69.6% 0.17 162.48);
+  --chart-3: oklch(76.9% 0.188 70.08);
+  --chart-4: oklch(62.7% 0.265 303.9);
+  --chart-5: oklch(64.5% 0.246 16.439);
+  --sidebar: oklch(21.6% 0.006 56.043);
+  --sidebar-foreground: oklch(98.5% 0.001 106.423);
+  --sidebar-primary: oklch(48.8% 0.243 264.376);
+  --sidebar-primary-foreground: oklch(98.5% 0.001 106.423);
+  --sidebar-accent: oklch(26.8% 0.007 34.298);
+  --sidebar-accent-foreground: oklch(98.5% 0.001 106.423);
+  --sidebar-border: oklch(100% 0 0 / 0.1);
+  --sidebar-ring: oklch(55.3% 0.013 58.071);
+  --sh-identifier: hsl(var(--foreground) / 90%);
+  --sh-keyword: #ff9a8b;
+  --sh-string: #4cd8d3;
+  --sh-class: #b3aaff;
+  --sh-property: #87b4e4;
+  --sh-entity: #a0d6d1;
+  --sh-jsxliterals: #d8a1c7;
+  --sh-sign: #c1d1d8;
+  --sh-comment: hsl(var(--muted-foreground) / 60%);
+}
+
+* {
+  border-color: var(--border);
+}
+
+body {
+  background-color: var(--background);
+  font-family: var(--font-sans);
+  font-size: var(--text-base);
+  line-height: var(--tw-leading, var(--text-base--line-height));
+  --tw-tracking: -0.0125em;
+  letter-spacing: -0.0125em;
+  color: var(--foreground);
+}
