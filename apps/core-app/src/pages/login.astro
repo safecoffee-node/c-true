@@ -1,0 +1,19 @@
+---
+import { actions } from "astro:actions";
+import Layout from "../layouts/Layout.astro";
+const result = Astro.getActionResult(actions.auth.login);
+if (result?.data && !result.error) {
+  return Astro.redirect("/admin");
+}
+
+console.log(result);
+---
+
+<Layout>
+  Bonjour les gens !
+  <form method="POST" action={actions.auth.login}>
+    <input value="test@test.com" type="email" name="email" />
+    <input value="password123" type="password" name="password" />
+    <button type="submit">Connexion</button>
+  </form>
+</Layout>

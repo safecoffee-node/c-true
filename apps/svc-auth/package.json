@@ -1,6 +1,9 @@
 {
-  "name": "svc-auth",
+  "name": "@r/svc-auth",
   "type": "module",
+  "exports": {
+    "./types": "./src/types.ts"
+  },
   "scripts": {
     "dev": "wrangler dev",
     "deploy": "pnpm run cf-gen-types && wrangler secret bulk .dev.vars.production && wrangler deploy --minify",

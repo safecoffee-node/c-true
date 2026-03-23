@@ -1,12 +1,21 @@
 ---
-import "../styles/index.css";
+import "../styles/global.css";
 import type { CollectionEntry } from "astro:content";
 import BaseHead from "../components/BaseHead.astro";
 import Header from "../components/Header.astro";
 
-type Props = CollectionEntry<"blog">["data"];
+type Props = CollectionEntry<"blog">["data"] & {
+  defaultTheme?: "auto" | "dark" | "light" | undefined;
+};
 
-const { title, description, pubDate, updatedDate, heroImage } = Astro.props;
+const {
+  title,
+  description,
+  pubDate,
+  updatedDate,
+  heroImage,
+  defaultTheme = "auto",
+} = Astro.props;
 ---
 
 <html lang="en">
@@ -27,3 +36,53 @@ const { title, description, pubDate, updatedDate, heroImage } = Astro.props;
     </main>
   </body>
 </html>
+
+<script is:inline data-default-theme={defaultTheme}>
+  window.theme ??= (() => {
+    const defaultTheme =
+      document.currentScript.getAttribute("data-default-theme");
+    const storageKey = "theme";
+    const store =
+      typeof localStorage !== "undefined"
+        ? localStorage
+        : { getItem: () => null, setItem: () => {} };
+
+    const mediaMatcher = window.matchMedia("(prefers-color-scheme: light)");
+    let systemTheme = mediaMatcher.matches ? "light" : "dark";
+    mediaMatcher.addEventListener("change", (event) => {
+      systemTheme = event.matches ? "light" : "dark";
+      applyTheme(getTheme());
+    });
+
+    function applyTheme(theme) {
+      const resolvedTheme = theme === "auto" ? systemTheme : theme;
+      document.documentElement.dataset.theme = resolvedTheme;
+      document.documentElement.style.colorScheme = resolvedTheme;
+      document.dispatchEvent(
+        new CustomEvent("theme-changed", {
+          detail: { theme, systemTheme, defaultTheme },
+        }),
+      );
+    }
+
+    function setTheme(theme = defaultTheme) {
+      store.setItem(storageKey, theme);
+      applyTheme(theme);
+    }
+
+    function getTheme() {
+      return store.getItem(storageKey) || defaultTheme;
+    }
+
+    function getSystemTheme() {
+      return systemTheme;
+    }
+
+    function getDefaultTheme() {
+      return defaultTheme;
+    }
+
+    return { setTheme, getTheme, getSystemTheme, getDefaultTheme };
+  })();
+  theme.setTheme(theme.getTheme());
+</script>

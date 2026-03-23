@@ -7,8 +7,7 @@ export const authConfigOptions = (
     enabled: true,
   },
   appName: "svc-auth",
-  baseURL:
-    vars.APP_ENV === "dev" ? "http://localhost:8787" : vars.AUTH_BASE_URL,
+  baseURL: vars.APP_ENV === "dev" ? "http://svc-auth" : vars.AUTH_BASE_URL,
   trustedOrigins: () => {
     if (vars.APP_ENV === "dev") {
       return ["http://localhost:4321"];
