@@ -10,5 +10,21 @@
   "observability": {
     "enabled": true,
   },
-  "services": [{ "binding": "SVC_AUTH", "service": "svc-auth" }],
+  "services": [
+    {
+      "binding": "SVC_AUTH",
+      "service": "svc-auth",
+    },
+    {
+      "binding": "SVC_COMMENT",
+      "service": "svc-comments",
+    },
+  ],
+  "d1_databases": [
+    {
+      "binding": "quote_app_core_db",
+      "database_name": "quote_app-core-db",
+      "database_id": "a708b451-4546-46a6-92c1-2f96cc504bd1",
+    },
+  ],
 }
