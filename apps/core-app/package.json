@@ -8,7 +8,7 @@
   "scripts": {
     "dev": "pnpm cf-gen-types && astro dev",
     "build": "astro build",
-    "deploy": "pnpm run cf-gen-types && wrangler secret bulk .dev.vars.production && wrangler deploy --minify",
+    "deploy": "pnpm build && pnpm run cf-gen-types && wrangler secret bulk .dev.vars.production && wrangler deploy --minify",
     "preview": "astro preview",
     "astro": "astro",
     "generate-types": "wrangler types",
