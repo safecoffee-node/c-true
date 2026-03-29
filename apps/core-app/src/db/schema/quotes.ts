@@ -20,8 +20,12 @@ export const quotes = t.sqliteTable("quotes", {
       ],
     })
     .default("attributed"),
-  source: t.text().notNull(),
-  author: t.text().notNull(),
+  publishAt: t
+    .text("publishAt", { mode: "json" })
+    .$type<string[]>()
+    .default([]),
+  source: t.text("source").notNull(),
+  author: t.text("author").notNull(),
   nationalite: t.text().notNull(),
   topicId: t
     .text("topic_id")

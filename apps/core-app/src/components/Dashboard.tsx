@@ -14,10 +14,10 @@ import {
   SidebarTrigger,
 } from "@/components/ui/sidebar";
 import { TooltipProvider } from "./ui/tooltip.tsx";
-import { useEffect, useState } from "react";
+import { useEffect, useState, type PropsWithChildren } from "react";
 import { actions } from "astro:actions";
 
-export default function Dashboard() {
+export default function Dashboard({ children }: PropsWithChildren) {
   const [quotes, setQuotes] = useState<any>();
 
   useEffect(() => {
@@ -54,17 +54,7 @@ export default function Dashboard() {
             </div>
           </header>
           <div className="flex flex-1 flex-col gap-4 p-4  pt-0 lg:px-[5rem]">
-            <div className=" grid grid-cols-3 gap-3">
-              {quotes &&
-                quotes.map((q) => (
-                  <div className="flex flex-col gap-1 px-2 py-5 border border-secondary rounded bg-secondary/40 hover:bg-secondary hover:cursor-pointer transition">
-                    <span className="font-mono text-sm"> {q.nationalite} </span>
-                    <h5 className=" font-medium font-serif">{q.author} </h5>
-                    <p className="font-serif text-sm">{q.body}</p>
-                    <span className="text-sm"> {q.topics.name} </span>
-                  </div>
-                ))}
-            </div>
+            {children}
 
             {/* <div className="grid auto-rows-min gap-4 md:grid-cols-3">
               <div className="aspect-video rounded-xl bg-muted/50" />

@@ -19,8 +19,10 @@ const blog = defineCollection({
 
 const citationSchema = z.object({
   citation: z.string(),
+  citation_originale: z.string(),
   auteur: z.string(),
   nationalite: z.string(),
+  source_originale: z.string(),
   source: z.string(),
   statut: z.enum(["verified", "attributed"]),
 });
@@ -41,14 +43,8 @@ const quotes = defineCollection({
       description: z.string(),
       methode: z.string(),
       statuts: z.record(z.string(), z.string()),
-      citations_retirees: z.array(
-        z.object({
-          citation: z.string(),
-          attribuee_a: z.string(),
-          raison: z.string(),
-        }),
-      ),
     }),
+
     themes: z.record(z.string(), themeSchema),
   }),
 });

@@ -17,7 +17,7 @@ for (const [key, theme] of Object.entries(data.themes)) {
 
   for (const c of theme.citations) {
     const id = `qt_${crypto.randomUUID().slice(0, 8)}`;
-    sql += `INSERT INTO quotes (id, body, author, nationalite, source, statut, topic_id) VALUES ('${id}', '${escape(c.citation)}', '${escape(c.auteur)}', '${escape(c.nationalite)}', '${escape(c.source)}', '${c.statut}', '${topicId}');\n`;
+    sql += `INSERT INTO quotes (id, body, author, nationalite, source, publishAt, statut, topic_id) VALUES ('${id}', '${escape(c.citation_originale)}', '${escape(c.auteur)}', '${escape(c.nationalite)}', '${escape(c.source_originale)}','${escape(JSON.stringify(c.publishAt))}',  '${c.statut}', '${topicId}');\n`;
   }
 
   sql += "\n";

@@ -11,6 +11,7 @@
     "preview": "astro preview",
     "astro": "astro",
     "generate-types": "wrangler types",
+    "db:generate": "drizzle-kit generate",
     "cf-gen-types": "wrangler types --env-interface CloudflareBindings",
     "db:migrate:local": "wrangler d1 migrations apply quote_app_core_db --local",
     "db:generate-seed": "bun tools/generate-seed.ts",
