@@ -46,7 +46,10 @@ function Calendar({
         ...formatters,
       }}
       classNames={{
-        root: cn("w-full lg:w-fit lg:min-w-[400px]", defaultClassNames.root),
+        root: cn(
+          "w-full lg:w-fit lg:min-w-[400px] border-none",
+          defaultClassNames.root,
+        ),
         months: cn(
           "relative flex flex-col gap-4 md:flex-row",
           defaultClassNames.months,
