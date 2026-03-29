@@ -12,23 +12,40 @@ export async function getDailyItem() {
 }
 
 const item = await getDailyItem();
+const today = new Date().toISOString().split("T")[0];
+const currentDate = item?.publishAt.find((d) => d === today);
 ---
 
 <Layout>
-  <div
-    class="prose prose-neutral dark:prose-invert prose-figcaption:text-muted-foreground prose-figcaption:-mt-3 prose-figcaption:mb-8 prose-figcaption:max-w-xl prose-figcaption:text-sm prose-img:mt-2 prose-ul:font-serif max-w-none"
-  >
-    <div class="grid grid-cols-1 gap-50">
-      <div class="flex flex-col">
-        <p
-          class="text-foreground mb-6 font-serif text-[17px] leading-[26px] font-light"
-        >
-          {item?.citation}
-        </p>
-        <p class="text-right font-serif text-muted-foreground">
-          — {item?.auteur}.
-        </p>
+  <article class="flex flex-col gap-8 md:pb-64">
+    <header>
+      <div class="flex items-center gap-2">
+        <h1 class="font-medium">{item?.source}</h1>
+      </div><time class="text-muted-foreground">
+        {
+          new Date(currentDate).toLocaleDateString("en-US", {
+            month: "long",
+            day: "numeric",
+            year: "numeric",
+          })
+        }
+      </time>
+    </header>
+    <div
+      class="prose prose-neutral dark:prose-invert prose-figcaption:text-muted-foreground prose-figcaption:-mt-3 prose-figcaption:mb-8 prose-figcaption:max-w-xl prose-figcaption:text-sm prose-img:mt-2 prose-ul:font-serif max-w-none"
+    >
+      <div class="grid grid-cols-1 gap-50">
+        <div class="flex flex-col">
+          <p
+            class="text-foreground mb-6 font-serif text-[17px] leading-[26px] font-light"
+          >
+            {item?.citation}
+          </p>
+          <p class="text-right font-serif text-muted-foreground">
+            — {item?.auteur}.
+          </p>
+        </div>
       </div>
     </div>
-  </div>
+  </article>
 </Layout>

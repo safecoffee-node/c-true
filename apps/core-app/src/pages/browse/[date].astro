@@ -25,10 +25,30 @@ const allCitations = items.flatMap((item) =>
 );
 
 const quote = allCitations.find((c) => c.publishAt.includes(dateStr));
+const today = new Date().toISOString().split("T")[0];
+
+const currentDate = new Date(dateStr).toLocaleDateString("en-US", {
+  month: "long",
+  day: "numeric",
+  year: "numeric",
+});
 ---
 
 <Layout>
-  <main>
+  <article class="flex flex-col gap-8 md:pb-64">
+    <header>
+      <div class="flex items-center gap-2">
+        <h1 class="font-medium">{quote?.source}</h1>
+      </div><time class="text-muted-foreground">
+        {
+          new Date(currentDate).toLocaleDateString("en-US", {
+            month: "long",
+            day: "numeric",
+            year: "numeric",
+          })
+        }
+      </time>
+    </header>
     <div class="prose prose-neutral dark:prose-invert ...">
       <div class="grid grid-cols-1 gap-50">
         <div class="flex flex-col">
@@ -43,5 +63,5 @@ const quote = allCitations.find((c) => c.publishAt.includes(dateStr));
         </div>
       </div>
     </div>
-  </main>
+  </article>
 </Layout>
