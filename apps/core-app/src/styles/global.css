@@ -175,4 +175,13 @@ body {
   body {
     @apply bg-background text-foreground;
   }
+
+  a {
+    @apply inline-block w-fit no-underline relative text-foreground;
+  }
+
+  a::after {
+    @apply block w-full h-[0.6px] bg-primary;
+    content: "";
+  }
 }

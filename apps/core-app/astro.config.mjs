@@ -12,8 +12,7 @@ import react from "@astrojs/react";
 
 // https://astro.build/config
 export default defineConfig({
-  output: "server",
-  site: "https://example.com",
+  site: "https://signin.safecoffi.com",
   integrations: [mdx(), sitemap(), react()],
 
   vite: {

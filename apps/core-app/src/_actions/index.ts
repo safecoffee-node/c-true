@@ -1,4 +1,4 @@
-import { auth } from "./auth.ts";
+import { auth } from "./auth.action.js";
 import { quotesAction } from "./quotes.action.ts";
 
 export const server = {
