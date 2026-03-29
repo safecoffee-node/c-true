@@ -47,7 +47,7 @@ function Calendar({
       }}
       classNames={{
         root: cn(
-          "w-full lg:w-fit lg:min-w-[400px] border-none",
+          "p-0! m-0! w-full lg:w-fit lg:min-w-[400px] border-none",
           defaultClassNames.root,
         ),
         months: cn(

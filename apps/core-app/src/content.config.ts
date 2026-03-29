@@ -20,6 +20,7 @@ const citationSchema = z.object({
   auteur: z.string(),
   nationalite: z.string(),
   source: z.string(),
+  source_originale: z.string().optional(),
   publishAt: z.array(z.string()),
   statut: z.enum(["verified", "attributed"]),
 });
