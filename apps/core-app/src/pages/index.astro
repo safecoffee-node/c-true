@@ -2,6 +2,9 @@
 export const prerender = false;
 import Layout from "../layouts/Layout.astro";
 import { getCollection } from "astro:content";
+import { Clock } from "@/components/clock.tsx";
+import { Spinner } from "@/components/ui/spinner.tsx";
+import { Skeleton } from "@/components/ui/skeleton.tsx";
 
 export async function getDailyItem() {
   const items = await getCollection("quotes");
@@ -15,6 +18,8 @@ export async function getDailyItem() {
 const item = await getDailyItem();
 const today = new Date().toISOString().split("T")[0];
 const currentDate = item?.publishAt.find((d) => d === today);
+const locale = Astro.currentLocale ?? "en";
+const timeZone = (Astro.request.cf?.timezone as string) ?? "UTC";
 ---
 
 <Layout>
@@ -24,16 +29,28 @@ const currentDate = item?.publishAt.find((d) => d === today);
         <h1 class="font-medium">
           {item?.source_originale ? item?.source_originale : item?.source}
         </h1>
-      </div><time class="text-muted-foreground">
-        {
-          new Intl.DateTimeFormat("en-US", {
-            timeZone: (Astro.request.cf?.timezone as string) ?? "UTC",
-            month: "long",
-            day: "numeric",
-            year: "numeric",
-          }).format(new Date(currentDate))
-        }
-      </time>
+      </div>
+      <div class="flex flex-col">
+        <time class="text-muted-foreground">
+          {
+            new Intl.DateTimeFormat("en-US", {
+              timeZone: (Astro.request.cf?.timezone as string) ?? "UTC",
+              month: "long",
+              day: "numeric",
+              year: "numeric",
+            }).format(new Date(currentDate))
+          }
+        </time>
+        <Clock locale={locale} timeZone={timeZone} client:only>
+          <div slot="fallback">
+            <div
+              data-slot="skeleton"
+              class="w-[90px] h-[20px] animate-pulse rounded bg-muted"
+            >
+            </div>
+          </div>
+        </Clock>
+      </div>
     </header>
     <div
       class="prose prose-neutral dark:prose-invert prose-figcaption:text-muted-foreground prose-figcaption:-mt-3 prose-figcaption:mb-8 prose-figcaption:max-w-xl prose-figcaption:text-sm prose-img:mt-2 prose-ul:font-serif max-w-none"
