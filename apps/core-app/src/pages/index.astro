@@ -26,11 +26,12 @@ const currentDate = item?.publishAt.find((d) => d === today);
         </h1>
       </div><time class="text-muted-foreground">
         {
-          new Date(currentDate).toLocaleDateString("en-US", {
+          new Intl.DateTimeFormat("en-US", {
+            timeZone: (Astro.request.cf?.timezone as string) ?? "UTC",
             month: "long",
             day: "numeric",
             year: "numeric",
-          })
+          }).format(new Date(currentDate))
         }
       </time>
     </header>
