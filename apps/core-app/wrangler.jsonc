@@ -1,33 +1,30 @@
 {
-	"compatibility_date": "2026-03-22",
-	"compatibility_flags": [
-		"global_fetch_strictly_public",
-		"nodejs_compat"
-	],
-	"name": "signin",
-	"main": "@astrojs/cloudflare/entrypoints/server",
-	"assets": {
-		"directory": "./dist",
-		"binding": "ASSETS",
-	},
-	"observability": {
-		"enabled": true,
-	},
-	// "services": [
-	// 	{
-	// 		"binding": "SVC_AUTH",
-	// 		"service": "svc-auth",
-	// 	},
-	// 	{
-	// 		"binding": "SVC_COMMENT",
-	// 		"service": "svc-comments",
-	// 	},
-	// ],
-	// "d1_databases": [
-	// 	{
-	// 		"binding": "quote_app_core_db",
-	// 		"database_name": "quote_app-core-db",
-	// 		"database_id": "a708b451-4546-46a6-92c1-2f96cc504bd1",
-	// 	},
-	// ],
+  "compatibility_date": "2026-03-22",
+  "compatibility_flags": ["global_fetch_strictly_public", "nodejs_compat"],
+  "name": "signin",
+  "main": "@astrojs/cloudflare/entrypoints/server",
+  "assets": {
+    "directory": "./dist",
+    "binding": "ASSETS",
+  },
+  "observability": {
+    "enabled": true,
+  },
+  "services": [
+    {
+      "binding": "SVC_AUTH",
+      "service": "svc-auth",
+    },
+    {
+      "binding": "SVC_COMMENT",
+      "service": "svc-comments",
+    },
+  ],
+  "d1_databases": [
+    {
+      "binding": "quote_app_core_db",
+      "database_name": "quote_app-core-db",
+      "database_id": "a708b451-4546-46a6-92c1-2f96cc504bd1",
+    },
+  ],
 }
