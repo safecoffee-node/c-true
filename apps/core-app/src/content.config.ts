@@ -19,6 +19,7 @@ const citationSchema = z.object({
   citation_originale: z.string(),
   auteur: z.string(),
   nationalite: z.string(),
+  source_originale: z.string(),
   source: z.string(),
   source_originale: z.string().optional(),
   publishAt: z.array(z.string()),
@@ -41,6 +42,7 @@ const quotes = defineCollection({
       methode: z.string(),
       statuts: z.record(z.string(), z.string()),
     }),
+
     themes: z.record(z.string(), themeSchema),
   }),
 });

@@ -22,6 +22,13 @@
       "when": 1774303802749,
       "tag": "0002_silky_ulik",
       "breakpoints": true
+    },
+    {
+      "idx": 3,
+      "version": "6",
+      "when": 1774796071205,
+      "tag": "0003_omniscient_blacklash",
+      "breakpoints": true
     }
   ]
 }
