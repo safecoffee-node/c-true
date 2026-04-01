@@ -178,11 +178,11 @@ body {
     @apply bg-background text-foreground;
   }
 
-  a {
+  a[data-link] {
     @apply inline-block w-fit no-underline relative text-foreground;
   }
 
-  a::after {
+  a[data-link]::after {
     @apply block w-full h-[0.6px] bg-primary;
     content: "";
   }

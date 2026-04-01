@@ -16,6 +16,7 @@ import {
 import { TooltipProvider } from "./ui/tooltip.tsx";
 import { useEffect, useState, type PropsWithChildren } from "react";
 import { actions } from "astro:actions";
+import { TableItem } from "./TableItem.tsx";
 
 export default function Dashboard({ children }: PropsWithChildren) {
   const [quotes, setQuotes] = useState<any>();
@@ -23,8 +24,6 @@ export default function Dashboard({ children }: PropsWithChildren) {
   useEffect(() => {
     actions.quotesAction.getAllQuotes().then((r) => setQuotes(r.data));
   }, []);
-
-  console.log(quotes);
 
   return (
     <TooltipProvider>
@@ -54,7 +53,7 @@ export default function Dashboard({ children }: PropsWithChildren) {
             </div>
           </header>
           <div className="flex flex-1 flex-col gap-4 p-4  pt-0 lg:px-[5rem]">
-            {children}
+            <TableItem items={quotes} />
 
             {/* <div className="grid auto-rows-min gap-4 md:grid-cols-3">
               <div className="aspect-video rounded-xl bg-muted/50" />
