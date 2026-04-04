@@ -41,6 +41,7 @@ const timeZone = (Astro.request.cf?.timezone as string) ?? "UTC";
             }).format(new Date(currentDate))
           }
         </time>
+
         <Clock locale={locale} timeZone={timeZone} client:only>
           <div slot="fallback">
             <div

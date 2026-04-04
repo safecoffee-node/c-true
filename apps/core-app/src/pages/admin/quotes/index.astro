@@ -1,0 +1,23 @@
+---
+import Dashboard from "@/components/Dashboard.tsx";
+import AdminLayout from "../layout/AdminLayout.astro";
+import { TableItem } from "@/components/TableItem.tsx";
+import { actions } from "astro:actions";
+import { Providers } from "@/components/Providers.tsx";
+
+const { data, error } = await Astro.callAction(actions.quotesAction.paginate, {
+  page: 1,
+});
+if (error) {
+  console.error(error);
+}
+---
+
+<AdminLayout>
+  <Dashboard transition:persist client:only>
+    <Providers client:only>
+      Bonjour les gens!
+      <TableItem client:only items={data} />
+    </Providers>
+  </Dashboard>
+</AdminLayout>

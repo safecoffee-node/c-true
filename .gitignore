@@ -1,4 +1,5 @@
 .turbo
+.vscode
 
 # build output
 dist/

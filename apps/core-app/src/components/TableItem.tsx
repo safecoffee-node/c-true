@@ -8,18 +8,40 @@ import {
   TableHeader,
   TableRow,
 } from "@/components/ui/table";
+import { actions } from "astro:actions";
+import { useState } from "react";
+import { Button } from "./ui/button.tsx";
+import { useQuery } from "@tanstack/react-query";
 
 type Props = {
   items: Record<string, any>[];
 };
-export function TableItem({ items }: Props) {
+export function TableItem({ items }: any) {
+  console.log(items);
+  const [page, setPage] = useState(1);
+  const [enabled, setEnabled] = useState(false);
+
   if (!items) {
     console.log("object");
     return;
   }
-  const colums = Object.keys(items[0]);
+
+  const { data, isLoading } = useQuery({
+    queryKey: ["quotes"],
+    queryFn: () => actions.quotesAction.paginate({ page: 1 }),
+    enabled,
+  });
+
+  const handleClick = () => {
+    setEnabled(true);
+  };
+
+  const handleNext = () => setPage((p) => p * 1);
+
+  const colums = Object.keys(items.data[0]);
   return (
     <div className="border rounded-lg">
+      <Button onClick={() => handleNext}>load</Button>
       <Table>
         <TableCaption>A list of your recent invoices.</TableCaption>
         <TableHeader>
@@ -32,7 +54,7 @@ export function TableItem({ items }: Props) {
           </TableRow>
         </TableHeader>
         <TableBody>
-          {items.map((item, k) => (
+          {items.data.map((item, k) => (
             <TableRow key={k}>
               {colums.map((c) => (
                 <TableCell key={c} className="font-medium max-w-20 truncate">

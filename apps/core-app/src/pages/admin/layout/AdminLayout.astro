@@ -1,4 +1,5 @@
 ---
+import { ClientRouter } from "astro:transitions";
 import "../../../styles/global.css";
 ---
 
@@ -6,10 +7,10 @@ import "../../../styles/global.css";
   <head>
     <title>Admin</title>
   </head>
-
   <body>
     <main>
       <slot />
     </main>
+    <ClientRouter transition:animate="none" />
   </body>
 </html>

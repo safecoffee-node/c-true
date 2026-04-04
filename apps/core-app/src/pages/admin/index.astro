@@ -6,5 +6,5 @@ const { name } = Astro.locals.user;
 ---
 
 <AdminLayout>
-  <Dashboard client:only />
+  <Dashboard client:only transition:persist />
 </AdminLayout>
