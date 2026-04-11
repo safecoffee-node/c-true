@@ -48,6 +48,10 @@ export function Layout({ children }: PropsWithChildren) {
     return isLast ? [item] : [item, <BreadcrumbSeparator />];
   });
 
+  const { pathname } = useLocation();
+  console.log(breadcrumbItems);
+  console.log(location);
+
   return (
     <SidebarProvider>
       <AppSidebar />
@@ -69,9 +73,15 @@ export function Layout({ children }: PropsWithChildren) {
                       key={(item as BreadcrumbEntry).name}
                       className="hidden md:block"
                     >
-                      <BreadcrumbLink href={(item as BreadcrumbEntry).path}>
-                        {(item as BreadcrumbEntry).name}
-                      </BreadcrumbLink>
+                      {pathname === (item as BreadcrumbEntry).path ? (
+                        <BreadcrumbPage>
+                          {(item as BreadcrumbEntry).name}
+                        </BreadcrumbPage>
+                      ) : (
+                        <BreadcrumbLink href={(item as BreadcrumbEntry).path}>
+                          {(item as BreadcrumbEntry).name}
+                        </BreadcrumbLink>
+                      )}
                     </BreadcrumbItem>
                   ),
                 )}
