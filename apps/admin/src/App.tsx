@@ -1,3 +1,10 @@
-export  function Page() {
-  return <div>Bonjour les gens !</div>;
+import { RouterProvider } from "react-router";
+import { router } from "./routes.tsx";
+
+export function App() {
+  return (
+    <>
+      <RouterProvider router={router} />
+    </>
+  );
 }

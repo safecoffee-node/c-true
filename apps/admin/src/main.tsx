@@ -1,21 +1,18 @@
 import { StrictMode } from "react";
 import { createRoot } from "react-dom/client";
 import "./index.css";
+import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
+import { App } from "./App.tsx";
+import { TooltipProvider } from "./components/ui/tooltip.tsx";
 
-import { BrowserRouter, Routes, Route } from "react-router";
-import { Layout } from "./layout.tsx";
-import { QuotesPage } from "./pages/quotes.tsx";
-import { Page } from "./App.tsx";
+const queryClient = new QueryClient();
 
 createRoot(document.getElementById("root")!).render(
   <StrictMode>
-    <BrowserRouter>
-      <Routes>
-        <Route element={<Layout />}>
-          <Route path="/" element={<Page />} />
-          <Route path="/quotes" element={<QuotesPage />} />
-        </Route>
-      </Routes>
-    </BrowserRouter>
+    <QueryClientProvider client={queryClient}>
+      <TooltipProvider>
+        <App />
+      </TooltipProvider>
+    </QueryClientProvider>
   </StrictMode>,
 );
