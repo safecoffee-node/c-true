@@ -18,6 +18,7 @@ import {
   SidebarMenuSubButton,
   SidebarMenuSubItem,
 } from "@/components/ui/sidebar";
+import { useLocation, useMatch } from "react-router";
 
 export function NavMain({
   items,
@@ -33,6 +34,8 @@ export function NavMain({
     }[];
   }[];
 }) {
+  const { pathname } = useLocation();
+
   return (
     <SidebarGroup>
       <SidebarGroupLabel>Platform</SidebarGroupLabel>
@@ -41,11 +44,12 @@ export function NavMain({
           <Collapsible
             key={item.title}
             render={<SidebarMenuItem />}
-            defaultOpen={item.isActive}
+            defaultOpen={pathname.startsWith(item.url)}
           >
             <SidebarMenuButton
               render={<a href={item.url} />}
               tooltip={item.title}
+              isActive={pathname.startsWith(item.url)}
             >
               {item.icon}
               <span>{item.title}</span>
@@ -65,8 +69,14 @@ export function NavMain({
                 <CollapsibleContent>
                   <SidebarMenuSub>
                     {item.items.map((subItem) => (
-                      <SidebarMenuSubItem key={subItem.title}>
-                        <SidebarMenuSubButton render={<a href={subItem.url} />}>
+                      <SidebarMenuSubItem
+                        aria-current="page"
+                        key={subItem.title}
+                      >
+                        <SidebarMenuSubButton
+                          isActive={pathname === subItem.url}
+                          render={<a href={subItem.url} />}
+                        >
                           <span>{subItem.title}</span>
                         </SidebarMenuSubButton>
                       </SidebarMenuSubItem>

@@ -24,6 +24,7 @@ import {
   MapIcon,
 } from "lucide-react";
 import { useLocation, useRoutes } from "react-router";
+import { routes } from "@/routes.tsx";
 
 // This is sample data.
 const data = {
@@ -156,10 +157,6 @@ const data = {
 };
 
 export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
-  const url = useLocation();
-
-  console.log(url);
-
   return (
     <Sidebar collapsible="icon" {...props}>
       <SidebarHeader>

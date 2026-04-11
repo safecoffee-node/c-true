@@ -22,7 +22,7 @@ type AppRoute = {
   children?: AppRoute[];
 } & Omit<RouteObject, "Component" | "children">;
 
-const routes = [
+export const routes = [
   {
     path: "/",
     Component: Layout,
