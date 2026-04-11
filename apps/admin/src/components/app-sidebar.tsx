@@ -23,6 +23,7 @@ import {
   PieChartIcon,
   MapIcon,
 } from "lucide-react";
+import { useLocation, useRoutes } from "react-router";
 
 // This is sample data.
 const data = {
@@ -56,12 +57,12 @@ const data = {
       isActive: true,
       items: [
         {
-          title: "collections",
+          title: "Collections",
           url: "/quotes/collections",
         },
         {
-          title: "Starred",
-          url: "#",
+          title: "Planning",
+          url: "/quotes/planning",
         },
         {
           title: "Settings",
@@ -155,6 +156,10 @@ const data = {
 };
 
 export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
+  const url = useLocation();
+
+  console.log(url);
+
   return (
     <Sidebar collapsible="icon" {...props}>
       <SidebarHeader>

@@ -17,7 +17,7 @@ function ErrorBoundary() {
 }
 
 type AppRoute = {
-  Component: ComponentType<{}> | LazyExoticComponent<ComponentType<{}>>;
+  Component?: ComponentType<{}> | LazyExoticComponent<ComponentType<{}>>;
   fallback?: ComponentType<{}> | null;
   children?: AppRoute[];
 } & Omit<RouteObject, "Component" | "children">;
@@ -31,14 +31,27 @@ const routes = [
     children: [
       {
         path: "/quotes",
-        Component: lazy(() =>
-          import("./pages/quotes.tsx").then((r) => ({ default: r.default })),
-        ),
         children: [
+          {
+            index: true,
+            Component: lazy(() =>
+              import("./pages/quotes/quotes.tsx").then((r) => ({
+                default: r.default,
+              })),
+            ),
+          },
           {
             path: "collections",
             Component: lazy(() =>
-              import("./pages/quotes.tsx").then((r) => ({
+              import("./pages/quotes/collections.tsx").then((r) => ({
+                default: r.default,
+              })),
+            ),
+          },
+          {
+            path: "planning",
+            Component: lazy(() =>
+              import("./pages/quotes/planning.tsx").then((r) => ({
                 default: r.default,
               })),
             ),
@@ -60,7 +73,7 @@ const routerTranformer = ({
       Component: (props: any) => {
         return (
           <Suspense fallback={<FalllbackComponent />}>
-            <route.Component {...props} />
+            {route.Component && <route.Component {...props} />}
           </Suspense>
         );
       },
