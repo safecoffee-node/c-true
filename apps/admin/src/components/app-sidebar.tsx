@@ -51,7 +51,7 @@ const data = {
   navMain: [
     {
       title: "Quotes",
-      url: "#",
+      url: "/quotes",
       icon: <TerminalSquareIcon />,
       isActive: true,
       items: [
