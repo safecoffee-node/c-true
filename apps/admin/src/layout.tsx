@@ -1,14 +1,8 @@
 import { Separator } from "@base-ui/react";
 import { Fragment, isValidElement, type PropsWithChildren } from "react";
-import {
-  Outlet,
-  useHref,
-  useLocation,
-  useMatch,
-  useMatches,
-  useParams,
-} from "react-router";
+import { Outlet, useLocation, useMatches } from "react-router";
 import { AppSidebar } from "./components/app-sidebar.tsx";
+import { ModeToggle } from "./components/mode-toogle.tsx";
 import {
   Breadcrumb,
   BreadcrumbItem,
@@ -55,36 +49,39 @@ export function Layout({ children }: PropsWithChildren) {
       <AppSidebar />
       <SidebarInset>
         <header className="flex h-16 shrink-0 items-center gap-2 transition-[width,height] ease-linear group-has-data-[collapsible=icon]/sidebar-wrapper:h-12">
-          <div className="flex items-center gap-2 px-4">
-            <SidebarTrigger className="-ml-1" />
-            <Separator
-              orientation="vertical"
-              className="mr-2 data-[orientation=vertical]:h-4"
-            />
-            <Breadcrumb>
-              <BreadcrumbList>
-                {buildBreadcrumb.map((item, index) =>
-                  isValidElement(item) ? (
-                    <Fragment key={index}> {item} </Fragment>
-                  ) : (
-                    <BreadcrumbItem
-                      key={(item as BreadcrumbEntry).name}
-                      className="hidden md:block"
-                    >
-                      {pathname === (item as BreadcrumbEntry).path ? (
-                        <BreadcrumbPage>
-                          {(item as BreadcrumbEntry).name}
-                        </BreadcrumbPage>
-                      ) : (
-                        <BreadcrumbLink href={(item as BreadcrumbEntry).path}>
-                          {(item as BreadcrumbEntry).name}
-                        </BreadcrumbLink>
-                      )}
-                    </BreadcrumbItem>
-                  ),
-                )}
-              </BreadcrumbList>
-            </Breadcrumb>
+          <div className="w-full flex items-center justify-between px-4">
+            <div className="flex items-center justify-between gap-2 px-4">
+              <SidebarTrigger className="-ml-1" />
+              <Separator
+                orientation="vertical"
+                className="mr-2 data-[orientation=vertical]:h-4"
+              />
+              <Breadcrumb>
+                <BreadcrumbList>
+                  {buildBreadcrumb.map((item, index) =>
+                    isValidElement(item) ? (
+                      <Fragment key={index}> {item} </Fragment>
+                    ) : (
+                      <BreadcrumbItem
+                        key={(item as BreadcrumbEntry).name}
+                        className="hidden md:block"
+                      >
+                        {pathname === (item as BreadcrumbEntry).path ? (
+                          <BreadcrumbPage>
+                            {(item as BreadcrumbEntry).name}
+                          </BreadcrumbPage>
+                        ) : (
+                          <BreadcrumbLink href={(item as BreadcrumbEntry).path}>
+                            {(item as BreadcrumbEntry).name}
+                          </BreadcrumbLink>
+                        )}
+                      </BreadcrumbItem>
+                    ),
+                  )}
+                </BreadcrumbList>
+              </Breadcrumb>
+            </div>
+            <ModeToggle />
           </div>
         </header>
         <div className="px-15 py-5">{children ?? <Outlet />}</div>
