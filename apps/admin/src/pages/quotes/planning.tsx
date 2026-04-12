@@ -1,6 +1,7 @@
-import { timeDay, timeMonday, timeMonth, timeWeek, utcMonth } from "d3-time";
+import { timeDay, timeMonday, timeMonth } from "d3-time";
 
 export default function Planning() {
+  const DAYS_IN_WEEK = 7;
   const now = new Date();
   const start = timeMonth.floor(now);
   const end = timeMonth.ceil(now);
@@ -10,13 +11,15 @@ export default function Planning() {
 
   const colIndex = (d: Date) => (d.getDay() + 6) % 7;
 
-  const startDay = start.getDay() + (6 % 7);
+  const startDay = colIndex(start);
 
   const weekIndex = (d: Date) => {
-    return Math.floor((timeDay.count(start, d) + startDay) / 7);
+    return Math.floor((timeDay.count(start, d) + startDay) / DAYS_IN_WEEK);
   };
 
-  const countWeeks = Math.floor((timeDay.count(start, end) + startDay) / 7);
+  const countWeeks = Math.floor(
+    (timeDay.count(start, end) + startDay) / DAYS_IN_WEEK,
+  );
   console.log(countWeeks);
 
   const dates = timeDay.range(startWeek, endWeek);
