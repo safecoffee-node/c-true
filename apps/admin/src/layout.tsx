@@ -84,7 +84,7 @@ export function Layout({ children }: PropsWithChildren) {
             <ModeToggle />
           </div>
         </header>
-        <div className="px-15 py-5">{children ?? <Outlet />}</div>
+        <div className="px-20 py-5">{children ?? <Outlet />}</div>
       </SidebarInset>
     </SidebarProvider>
   );
