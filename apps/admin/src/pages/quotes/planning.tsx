@@ -1,6 +1,6 @@
 import clsx from "clsx";
 import { timeDay, timeMonday, timeMonth } from "d3-time";
-
+import { Button } from "@/components/ui/button.tsx";
 export default function Planning() {
   const DAYS_IN_WEEK = 7;
   const now = new Date();
@@ -42,19 +42,23 @@ export default function Planning() {
             alias illum.
           </p>
         </div>
-        <div className="flex flex-col gap-2">
+        <div className="flex flex-col gap-4">
           <h3 className="font-medium"> {formatted.format(now)} </h3>
 
-          <div className="grid grid-cols-7 border-l border-t ">
+          <div className="grid grid-cols-7 border-l border-t">
             {dates.map((d) => (
               <div
                 key={d.getTime()}
+                style={{
+                  gridColumn: colIndex(d) + 1,
+                  gridRow: weekIndex(d) + 1,
+                }}
                 className={clsx(
                   "p-4 text-sm aspect-square border-r border-b hover:bg-accent/60 transition-discrete",
                   weekIndex(d) === weekIndex(now) &&
-                    "bg-accent/40 border-black/5",
+                    "bg-accent/40 border-border",
                   +timeDay.floor(d) === +timeDay.floor(now) &&
-                    "bg-sky-700/50 text-primary-foreground hover:bg-sky-600/50 transition-discrete",
+                    "bg-primary text-primary-foreground hover:bg-primary/70 transition-discrete",
                 )}
               >
                 <span className={clsx((d < start || d >= end) && "opacity-20")}>
