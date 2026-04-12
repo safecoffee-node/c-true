@@ -49,8 +49,6 @@ export function Layout({ children }: PropsWithChildren) {
   });
 
   const { pathname } = useLocation();
-  console.log(breadcrumbItems);
-  console.log(location);
 
   return (
     <SidebarProvider>
