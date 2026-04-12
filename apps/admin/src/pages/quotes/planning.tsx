@@ -26,7 +26,9 @@ export default function Planning() {
       <div className="grid grid-cols-7 border-collapse border border-accent">
         {dates.map((d, i) => (
           <div
-            className={`p-2 text-end aspect-square border border-accent  ${weekIndex(d) === weekIndex(now) ? "bg-accent/40" : ""} ${d.getDate() === now.getDate() ? "bg-sky-700 text-primary-foreground" : ""}`}
+            className={`p-2 text-end aspect-square border border-accent 
+              ${weekIndex(d) === weekIndex(now) ? "bg-accent/50 border-black/5" : ""}
+              ${+timeDay.floor(d) === +timeDay.floor(now) ? "bg-sky-700/50 text-primary-foreground" : ""}`}
             key={i}
             style={{
               gridColumn: colIndex(d) + 1,
