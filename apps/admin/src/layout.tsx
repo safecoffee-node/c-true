@@ -96,9 +96,10 @@ export function Layout({ children }: PropsWithChildren) {
 export function LayoutSkeleton() {
   return (
     <Layout>
-      <div className="w-full max-w-2xl flex flex-col items-start space-y-6">
+      <div className="w-full  flex flex-col items-start space-y-6">
         <Skeleton className="w-77 h-9" />
         <Skeleton className="w-full h-20" />
+        <Skeleton className="w-full h-50" />
       </div>
     </Layout>
   );
