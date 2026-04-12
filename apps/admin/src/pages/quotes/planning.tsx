@@ -26,14 +26,16 @@ export default function Planning() {
       <div className="grid grid-cols-7 border-collapse border border-accent">
         {dates.map((d, i) => (
           <div
-            className="p-2 text-end aspect-square border-collapse border border-accent"
+            className={`p-2 text-end aspect-square border border-accent  ${weekIndex(d) === weekIndex(now) ? "bg-accent/40" : ""} ${d.getDate() === now.getDate() ? "bg-sky-700 text-primary-foreground" : ""}`}
             key={i}
             style={{
               gridColumn: colIndex(d) + 1,
               gridRow: weekIndex(d) + 1,
             }}
           >
-            {d.getDate()}
+            <span className={`${d < start || d >= end ? "opacity-20" : ""}`}>
+              {d.getDate()}
+            </span>
           </div>
         ))}
       </div>
