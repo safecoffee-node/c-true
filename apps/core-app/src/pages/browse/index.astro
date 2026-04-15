@@ -1,0 +1,15 @@
+---
+import { Spinner } from "@/components/ui/spinner";
+import Layout from "@/layouts/Layout.astro";
+import { Browse } from "@/components/browse.tsx";
+---
+
+<Layout>
+  <div class="m-auto flex items-center justify-center">
+    <Browse client:only="react">
+      <div slot="fallback">
+        <Spinner />
+      </div>
+    </Browse>
+  </div>
+</Layout>

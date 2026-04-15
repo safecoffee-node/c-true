@@ -1,0 +1,10 @@
+---
+import Dashboard from "@/components/Dashboard.tsx";
+import AdminLayout from "./layout/AdminLayout.astro";
+
+const { name } = Astro.locals.user;
+---
+
+<AdminLayout>
+  <Dashboard client:only transition:persist />
+</AdminLayout>

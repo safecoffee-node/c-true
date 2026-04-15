@@ -1,0 +1,19 @@
+---
+const today = new Date();
+---
+
+<footer>
+  <div class="font-mono text-sm flex flex-col gap-1 p-0 m-0 text-center">
+    <div>
+      <a data-link href="/browse">Browse</a>
+      <a data-link href="/about">About</a>
+    </div>
+    &copy; {today.getFullYear()} signin All rights reserved.
+  </div>
+</footer>
+
+<style>
+  footer {
+    padding-block: 1rem;
+  }
+</style>

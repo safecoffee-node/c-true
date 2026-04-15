@@ -1,11 +1,7 @@
-.turbo
-.vscode
-
 # build output
 dist/
 # generated types
 .astro/
-
 # dependencies
 node_modules/
 
@@ -25,3 +21,7 @@ pnpm-debug.log*
 
 # jetbrains setting folder
 .idea/
+
+.wrangler
+
+.turbo

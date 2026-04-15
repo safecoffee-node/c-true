@@ -1,0 +1,8 @@
+---
+import { env } from "cloudflare:workers";
+
+const Component = await env.SVC_COMMENT.fetch("http://localhost:5173/");
+const a = await Component.text();
+---
+
+<div set:html={a} />
