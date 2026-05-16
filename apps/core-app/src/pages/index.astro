@@ -25,11 +25,11 @@ const timeZone = (Astro.request.cf?.timezone as string) ?? "UTC";
 <Layout>
   <article class="flex flex-col gap-8 md:pb-64">
     <header>
-      <!-- <div class="flex items-center gap-2">
+      <div class="flex items-center gap-2">
         <h1 class="font-medium">
           {item?.source_originale ? item?.source_originale : item?.source}
         </h1>
-      </div> -->
+      </div>
       <div class="flex flex-col">
         <time>
           {
