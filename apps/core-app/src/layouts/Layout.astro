@@ -4,6 +4,7 @@ import type { CollectionEntry } from "astro:content";
 import BaseHead from "../components/BaseHead.astro";
 import Header from "../components/Header.astro";
 import Footer from "@/components/Footer.astro";
+import { ClientRouter } from "astro:transitions";
 
 type Props = CollectionEntry<"blog">["data"] & {
   defaultTheme?: "auto" | "dark" | "light" | undefined;
@@ -29,12 +30,13 @@ const {
       <div
         class="mx-auto mt-8 mb-16 flex max-w-[652px] h-full flex-col gap-12 px-6 md:mt-16 md:gap-16"
       >
-        <!-- <Header /> -->
+        <Header />
         <div class="flex-1">
           <slot />
         </div>
         <Footer />
       </div>
+      <ClientRouter />
     </main>
   </body>
 </html>
@@ -87,4 +89,8 @@ const {
     return { setTheme, getTheme, getSystemTheme, getDefaultTheme };
   })();
   theme.setTheme(theme.getTheme());
+
+  document.addEventListener("astro:after-swap", () => {
+    theme.setTheme(theme.getTheme());
+  });
 </script>

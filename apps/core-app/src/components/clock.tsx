@@ -23,19 +23,20 @@ export function Clock({
     hour: "",
     minute: "",
     second: "",
-    dayPeriod: "",
+    timeZoneName: "",
   });
   const prev = usePrevious(time);
   const hourRef = useRef<HTMLSpanElement>(null);
   const minuteRef = useRef<HTMLSpanElement>(null);
   const secondRef = useRef<HTMLSpanElement>(null);
-  const dayPeriodRef = useRef<HTMLSpanElement>(null);
+  const timeZoneNameRef = useRef<HTMLSpanElement>(null);
 
   useEffect(() => {
     const formatter = new Intl.DateTimeFormat(locale, {
       hour: "2-digit",
       minute: "2-digit",
       second: "2-digit",
+      timeZoneName: "longOffset",
       timeZone,
     });
 
@@ -45,7 +46,9 @@ export function Clock({
         hour: parts.find((p) => p.type === "hour")?.value ?? "",
         minute: parts.find((p) => p.type === "minute")?.value ?? "",
         second: parts.find((p) => p.type === "second")?.value ?? "",
-        dayPeriod: parts.find((p) => p.type === "dayPeriod")?.value ?? "",
+        timeZoneName:
+          parts.find((p) => p.type === "timeZoneName")?.value.split(":")[0] ??
+          "",
       });
     };
 
@@ -59,7 +62,11 @@ export function Clock({
       { ref: hourRef, value: time.hour, prev: prev.hour },
       { ref: minuteRef, value: time.minute, prev: prev.minute },
       { ref: secondRef, value: time.second, prev: prev.second },
-      { ref: dayPeriodRef, value: time.dayPeriod, prev: prev.dayPeriod },
+      {
+        ref: timeZoneNameRef,
+        value: time.timeZoneName,
+        prev: prev.timeZoneName,
+      },
     ];
 
     for (const { ref, value, prev } of parts) {
@@ -73,14 +80,13 @@ export function Clock({
   }, [time]);
 
   return (
-    <time className="text-sm text-muted-foreground flex items-center gap-1">
+    <time className="text-sm text-muted-foreground flex items-center gap-1.5">
       <span ref={hourRef}>{time.hour}</span>
       <span>:</span>
       <span ref={minuteRef}>{time.minute}</span>
       <span>:</span>
       <span ref={secondRef}>{time.second}</span>
-      <span>--</span>
-      <span ref={dayPeriodRef}>{time.dayPeriod}</span>
+      <span ref={timeZoneNameRef}>{time.timeZoneName}</span>
     </time>
   );
 }

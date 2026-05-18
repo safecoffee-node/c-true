@@ -1,5 +1,6 @@
 ---
 import { Clock } from "@/components/clock.tsx";
+import TimeFormat from "@/components/TimeFormat.astro";
 import { Spinner } from "@/components/ui/spinner";
 import Layout from "@/layouts/Layout.astro";
 import { getCollection } from "astro:content";
@@ -40,16 +41,16 @@ const timeZone = (Astro.request.cf?.timezone as string) ?? "UTC";
 
 <Layout>
   <article class="flex flex-col gap-8 md:pb-64">
-    <header>
+    <header class="flex flex-col gap-2">
       <div class="flex items-center gap-2">
-        <h1 class="font-medium">
+        <h1 class="font-medium font-serif">
           {quote?.source_originale ? quote?.source_originale : quote?.source}
         </h1>
       </div>
       <div class="flex flex-col">
         <time>
           {
-            new Intl.DateTimeFormat("en-US", {
+            new Intl.DateTimeFormat(locale, {
               timeZone: (Astro.request.cf?.timezone as string) ?? "UTC",
               month: "long",
               day: "numeric",
@@ -57,15 +58,7 @@ const timeZone = (Astro.request.cf?.timezone as string) ?? "UTC";
             }).format(new Date(currentDate))
           }
         </time>
-        <Clock locale={locale} timeZone={timeZone} client:only="react">
-          <div slot="fallback">
-            <div
-              data-slot="skeleton"
-              class="w-[90px] h-[20px] animate-pulse rounded bg-muted"
-            >
-            </div>
-          </div>
-        </Clock>
+        <TimeFormat />
       </div>
     </header>
     <div class="prose prose-neutral dark:prose-invert ...">

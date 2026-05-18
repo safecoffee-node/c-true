@@ -1,0 +1,41 @@
+---
+import { Clock } from "./clock.tsx";
+const locale = Astro.currentLocale ?? "en";
+const timeZone = Astro.request.cf?.timezone;
+---
+
+<div class="grid grid-cols-[auto_1fr] gap-1 text-muted-foreground">
+  <div class="w-40">
+    {
+      (
+        <div class="grid grid-cols-4">
+          <span>ME</span>
+          <Clock locale={locale} timeZone="Africa/Brazzaville" client:only>
+            <div slot="fallback">
+              <div
+                data-slot="skeleton"
+                class="w-[90px] h-[20px] animate-pulse rounded bg-muted"
+              />
+            </div>
+          </Clock>
+        </div>
+      )
+    }
+
+    {
+      (
+        <div class="grid grid-cols-4">
+          <span>YOU</span>
+          <Clock locale={locale} timeZone={timeZone} client:only>
+            <div slot="fallback">
+              <div
+                data-slot="skeleton"
+                class="w-[90px] h-[20px] animate-pulse rounded bg-muted"
+              />
+            </div>
+          </Clock>
+        </div>
+      )
+    }
+  </div>
+</div>

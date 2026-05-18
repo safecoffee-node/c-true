@@ -5,6 +5,7 @@ import { getCollection } from "astro:content";
 import { Clock } from "@/components/clock.tsx";
 import { Spinner } from "@/components/ui/spinner.tsx";
 import { Skeleton } from "@/components/ui/skeleton.tsx";
+import TimeFormat from "@/components/TimeFormat.astro";
 
 export async function getDailyItem() {
   const items = await getCollection("quotes");
@@ -14,59 +15,49 @@ export async function getDailyItem() {
   const today = new Date().toISOString().split("T")[0];
   return flattensItems.find((c) => c.publishAt.includes(today));
 }
-
 const item = await getDailyItem();
 const today = new Date().toISOString().split("T")[0];
 const currentDate = item?.publishAt.find((d) => d === today);
 const locale = Astro.currentLocale ?? "en";
-const timeZone = (Astro.request.cf?.timezone as string) ?? "UTC";
 ---
 
 <Layout>
   <article class="flex flex-col gap-8 md:pb-64">
-    <header>
+    <header class="flex flex-col gap-2">
       <div class="flex items-center gap-2">
-        <h1 class="font-medium">
+        <h1 class="font-medium font-serif">
           {item?.source_originale ? item?.source_originale : item?.source}
         </h1>
       </div>
       <div class="flex flex-col">
         <time>
           {
-            new Intl.DateTimeFormat("en-US", {
+            new Intl.DateTimeFormat(locale, {
               timeZone: (Astro.request.cf?.timezone as string) ?? "UTC",
               month: "long",
               day: "numeric",
               year: "numeric",
-            }).format(new Date(currentDate))
+            }).format(new Date(currentDate ?? 0))
           }
         </time>
-        <Clock locale={locale} timeZone={timeZone} client:only>
-          <div slot="fallback">
-            <div
-              data-slot="skeleton"
-              class="w-[90px] h-[20px] animate-pulse rounded bg-muted"
-            >
-            </div>
-          </div>
-        </Clock>
+        <TimeFormat />
       </div>
-    </header>
-    <div
-      class="prose prose-neutral dark:prose-invert prose-figcaption:text-muted-foreground prose-figcaption:-mt-3 prose-figcaption:mb-8 prose-figcaption:max-w-xl prose-figcaption:text-sm prose-img:mt-2 prose-ul:font-serif max-w-none"
-    >
-      <div class="grid grid-cols-1 gap-50">
-        <div class="flex flex-col">
-          <p
-            class="text-foreground mb-6 font-serif text-[17px] leading-[26px] font-light"
-          >
-            {item?.citation}
-          </p>
-          <p class="text-right font-serif text-muted-foreground">
-            — {item?.auteur}.
-          </p>
+      <div
+        class="prose prose-neutral dark:prose-invert prose-figcaption:text-muted-foreground prose-figcaption:-mt-3 prose-figcaption:mb-8 prose-figcaption:max-w-xl prose-figcaption:text-sm prose-img:mt-2 prose-ul:font-serif max-w-none"
+      >
+        <div class="grid grid-cols-1 gap-50">
+          <div class="flex flex-col">
+            <p
+              class="text-foreground mb-6 font-serif text-[17px] leading-[26px] font-light"
+            >
+              {item?.citation}
+            </p>
+            <p class="text-right font-serif text-muted-foreground">
+              — {item?.auteur}.
+            </p>
+          </div>
         </div>
       </div>
-    </div>
+    </header>
   </article>
 </Layout>
