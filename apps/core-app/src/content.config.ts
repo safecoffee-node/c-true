@@ -45,4 +45,16 @@ const quotes = defineCollection({
   }),
 });
 
-export const collections = { blog, quotes };
+const dailyWisdom = defineCollection({
+  loader: glob({ base: "./src/content/daily-wisdom", pattern: "**/*.md" }),
+  schema: z.object({
+    title: z.string(),
+    pubDate: z.string(),
+    dayOfYear: z.number(),
+    source: z.string(),
+    type: z.string(),
+    holiday: z.string().optional(),
+  }),
+});
+
+export const collections = { blog, quotes, "daily-wisdom": dailyWisdom };

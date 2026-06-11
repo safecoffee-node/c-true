@@ -1,0 +1,13 @@
+---
+title: "Pangono - pangono kambe anafika ku Ciwambo."
+pubDate: "Feb 23"
+dayOfYear: 54
+source: "Nyanja of Malawi proverb"
+type: "proverb"
+---
+
+Pangono - pangono kambe anafika ku Ciwambo.
+
+Little by little, the tortoise arrived at the Indian Ocean.
+
+Nyanja of Malawi proverb

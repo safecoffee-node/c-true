@@ -1,0 +1,73 @@
+---
+import Layout from "@/layouts/Layout.astro";
+import { getCollection } from "astro:content";
+
+const allWisdom = await getCollection("daily-wisdom");
+
+const months = [
+  "Jan",
+  "Feb",
+  "Mar",
+  "Apr",
+  "May",
+  "Jun",
+  "Jul",
+  "Aug",
+  "Sep",
+  "Oct",
+  "Nov",
+  "Dec",
+];
+const now = new Date();
+const todayLabel = `${months[now.getMonth()]} ${String(now.getDate()).padStart(2, "0")}`;
+const todaysEntry = allWisdom.find((e) => e.data.pubDate === todayLabel);
+---
+
+<Layout>
+  <article class="flex flex-col gap-8 md:pb-64">
+    <header class="flex flex-col gap-2">
+      <h1 class="font-medium font-serif text-balance">Wisdom of the Day</h1>
+      <time class="text-muted-foreground text-sm">{todayLabel}</time>
+    </header>
+
+    {
+      todaysEntry ? (
+        <div class="prose prose-neutral dark:prose-invert max-w-none">
+          <div class="not-prose flex flex-col gap-2 mb-6">
+            <span class="text-xs uppercase tracking-wider text-muted-foreground">
+              {todaysEntry.data.type}
+              {todaysEntry.data.source ? ` — ${todaysEntry.data.source}` : ""}
+            </span>
+          </div>
+          <div class="font-serif text-[17px] leading-[26px] font-light whitespace-pre-line">
+            {todaysEntry.body}
+          </div>
+        </div>
+      ) : (
+        <p class="text-muted-foreground">No wisdom entry for today.</p>
+      )
+    }
+
+    <nav class="mt-12 border-t pt-6">
+      <h2 class="text-sm font-medium mb-4">All Entries</h2>
+      <ul
+        class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-x-4 gap-y-1 text-sm"
+      >
+        {
+          allWisdom
+            .sort((a, b) => a.data.dayOfYear - b.data.dayOfYear)
+            .map((entry) => (
+              <li>
+                <a
+                  href={`/wisdom/${entry.data.dayOfYear}/`}
+                  class="text-muted-foreground hover:text-foreground transition-colors"
+                >
+                  {entry.data.pubDate} — {entry.data.title}
+                </a>
+              </li>
+            ))
+        }
+      </ul>
+    </nav>
+  </article>
+</Layout>

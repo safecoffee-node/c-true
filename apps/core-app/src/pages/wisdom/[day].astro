@@ -1,0 +1,45 @@
+---
+import Layout from "@/layouts/Layout.astro";
+import { getCollection } from "astro:content";
+
+export async function getStaticPaths() {
+  const entries = await getCollection("daily-wisdom");
+  return entries.map((entry) => ({
+    params: { day: String(entry.data.dayOfYear) },
+    props: { entry },
+  }));
+}
+
+const { entry } = Astro.props;
+const { data, body } = entry;
+---
+
+<Layout>
+  <article class="flex flex-col gap-8 md:pb-64">
+    <header class="flex flex-col gap-2">
+      <div class="flex items-center gap-2">
+        <a
+          href="/wisdom/"
+          class="text-sm text-muted-foreground hover:text-foreground transition-colors"
+        >
+          &larr; Wisdom of the Day
+        </a>
+      </div>
+      <h1 class="font-medium font-serif text-balance">{data.title}</h1>
+      <div class="flex flex-wrap gap-x-4 gap-y-1 text-sm text-muted-foreground">
+        <time>{data.pubDate}</time>
+        <span class="uppercase tracking-wider text-xs">{data.type}</span>
+        {data.source ? <span>{data.source}</span> : null}
+        {data.holiday ? <span class="italic">{data.holiday}</span> : null}
+      </div>
+    </header>
+
+    <div class="prose prose-neutral dark:prose-invert max-w-none">
+      <div
+        class="font-serif text-[17px] leading-[26px] font-light whitespace-pre-line"
+      >
+        {body}
+      </div>
+    </div>
+  </article>
+</Layout>
