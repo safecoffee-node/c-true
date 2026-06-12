@@ -48,10 +48,11 @@ const quotes = defineCollection({
 const dailyWisdom = defineCollection({
   loader: glob({ base: "./src/content/daily-wisdom", pattern: "**/*.md" }),
   schema: z.object({
-    title: z.string(),
+    title: z.string().optional(),
     pubDate: z.string(),
     dayOfYear: z.number(),
-    source: z.string(),
+    location: z.string().optional(),
+    source: z.string().optional(),
     type: z.string(),
     holiday: z.string().optional(),
   }),

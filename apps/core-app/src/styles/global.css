@@ -187,3 +187,13 @@ body {
     content: "";
   }
 }
+
+@layer components {
+  .attribution {
+    @apply text-center italic text-muted-foreground;
+  }
+
+  .prose .no-bullets {
+    list-style: none !important;
+  }
+}

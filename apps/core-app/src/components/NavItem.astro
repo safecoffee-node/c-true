@@ -10,12 +10,12 @@ const { href, label, active = false } = Astro.props;
 
 <li
   class:list={[
-    "transition cursor-pointer px-3 py-2 rounded-full hover:bg-border text-sm",
+    "transition cursor-pointer rounded-full hover:bg-border text-sm",
     { "bg-primary-foreground": active },
   ]}
 >
   <a
-    class="no-underline! after:hidden flex items-center justify-center leading-none"
+    class="no-underline! after:hidden flex items-center justify-center leading-none px-3 py-2"
     href={href}>{label}</a
   >
 </li>
