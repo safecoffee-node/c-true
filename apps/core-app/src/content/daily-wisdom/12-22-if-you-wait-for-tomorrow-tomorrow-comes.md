@@ -1,13 +1,8 @@
 ---
-title: "If you wait for tomorrow, tomorrow comes."
-pubDate: "Dec 22"
+pubDate: Dec 22
 dayOfYear: 357
-source: ""
-type: "proverb"
+source: Malinke of West Africa proverb
+type: proverb
 ---
 
-If you wait for tomorrow, tomorrow comes. If you dont wait for
-
-tomorrow, tomorrow comes.
-
-Malinke of West Africa proverb
+If you wait for tomorrow, tomorrow comes. If you dont wait for tomorrow, tomorrow comes.

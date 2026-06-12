@@ -1,14 +1,9 @@
 ---
-title: "Congolese riddle:
-
-Who can whistle from another mans mouth?"
-pubDate: "Feb 13"
+pubDate: Feb 13
 dayOfYear: 44
-source: ""
-type: "riddle"
+source: 'Congolese riddle:'
+type: riddle
 ---
-
-Congolese riddle:
 
 Who can whistle from another mans mouth?
 

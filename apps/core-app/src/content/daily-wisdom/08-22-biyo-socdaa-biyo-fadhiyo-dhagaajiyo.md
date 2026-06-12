@@ -1,13 +1,10 @@
 ---
-title: "Biyo socdaa biyo fadhiyo dhagaajiyo."
-pubDate: "Aug 22"
+pubDate: Aug 22
 dayOfYear: 235
-source: "Somali proverb"
-type: "proverb"
+source: Somali proverb
+type: proverb
 ---
 
 Biyo socdaa biyo fadhiyo dhagaajiyo.
 
 Flowing water makes stagnant water move.
-
-Somali proverb

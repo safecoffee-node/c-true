@@ -1,16 +1,12 @@
 ---
-title: "The drunkenness of youth has passed like a fever,
-
-and yet I saw many things."
-pubDate: "Jan 24"
+pubDate: Jan 24
 dayOfYear: 24
-source: "Anonymous. Inscription at the city of Brass, Nigeria, c"
-type: "quote"
+source: Anonymous. Inscription at the city of Brass, Nigeria, c
+location: Day of Victory (anniversary of failed attack at Sarakawa), Togo
+type: quote
 ---
 
-The drunkenness of youth has passed like a fever,
-
-and yet I saw many things.
+The drunkenness of youth has passed like a fever, and yet I saw many things.
 
 Seeing my glory in the days of my glory.
 
@@ -28,9 +24,7 @@ And the people of the earth behind my laws;
 
 But now
 
-The drunkenness of youth has passed like a fever,
-
-like foam upon sand.
+The drunkenness of youth has passed like a fever, like foam upon sand.
 
 Death took me in a net;
 
@@ -50,8 +44,4 @@ He is with me,
 
 My jealous beast holds him for ever.
 
-Anonymous. Inscription at the city of Brass, Nigeria, c.
-
 thirteenth century A.D.
-
-Day of Victory (anniversary of failed attack at Sarakawa), Togo

@@ -1,13 +1,8 @@
 ---
-title: "I had a date in the bush
-
-With all the gods,
-
-So I went."
-pubDate: "Aug 23"
+pubDate: Aug 23
 dayOfYear: 236
-source: ""
-type: "quote"
+source: ''
+type: quote
 ---
 
 I had a date in the bush
@@ -22,9 +17,7 @@ With all the trees,
 
 So I went.
 
-I had a date in the mountain
-
-with the Kontombl.
+I had a date in the mountain with the Kontombl.
 
 I went because I had to go.
 
@@ -74,9 +67,7 @@ Now I am back, remembering.
 
 I want to be what I know I am,
 
-And take the road we always
-
-forget to take.
+And take the road we always forget to take.
 
 Because I heard the smell
 

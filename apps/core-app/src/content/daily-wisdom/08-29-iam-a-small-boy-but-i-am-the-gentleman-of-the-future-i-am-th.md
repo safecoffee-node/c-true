@@ -1,13 +1,8 @@
 ---
-title: "Iam a small boy
-
-But I am the gentleman of the future;
-
-I am the goodness of ..."
-pubDate: "Aug 29"
+pubDate: Aug 29
 dayOfYear: 242
-source: "Dinka of southern Sudan song"
-type: "quote"
+source: Dinka of southern Sudan song
+type: quote
 ---
 
 Iam a small boy
@@ -26,6 +21,4 @@ Learning is power
 
 Learning is the best.
 
-Dinka of southern Sudan song for motivating children to
-
-attend school
+Dinka of southern Sudan song for motivating children to attend school

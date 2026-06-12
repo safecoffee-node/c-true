@@ -1,13 +1,9 @@
 ---
-title: "Silence is also a form of speech."
-pubDate: "Aug 04"
+pubDate: Aug 04
 dayOfYear: 217
-source: "Fulani of West Africa proverb"
-type: "proverb"
+source: Fulani of West Africa proverb
+location: National Day, Burkina Faso
+type: proverb
 ---
 
 Silence is also a form of speech.
-
-Fulani of West Africa proverb
-
-National Day, Burkina Faso

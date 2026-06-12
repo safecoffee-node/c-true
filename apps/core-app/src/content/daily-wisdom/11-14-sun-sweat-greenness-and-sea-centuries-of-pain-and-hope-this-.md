@@ -1,13 +1,9 @@
 ---
-title: "Sun, sweat, greenness and sea,
-
-Centuries of pain and hope;
-
-This is the land..."
-pubDate: "Nov 14"
+pubDate: Nov 14
 dayOfYear: 319
-source: ""
-type: "proverb"
+source: AFRICAN PROVERBS AND WiSDOM (Chorus)
+location: Anniversary of the Movement of Readjustment, Guinea-Bissau
+type: proverb
 ---
 
 Sun, sweat, greenness and sea,
@@ -23,10 +19,6 @@ Of the flower of our blood:
 This is our beloved country.
 
 Dagger of the Mangbeth of Zaire
-
-AFRICAN PROVERBS AND WiSDOM
-
-(Chorus)
 
 Long live our glorious country!
 
@@ -55,5 +47,3 @@ The dawn and the sun are singing
 That our struggle has born fruit!
 
 From the national anthem of Guinea-Bissau
-
-Anniversary of the Movement of Readjustment, Guinea-Bissau

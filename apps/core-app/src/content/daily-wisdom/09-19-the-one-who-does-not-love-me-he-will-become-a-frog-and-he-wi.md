@@ -1,13 +1,8 @@
 ---
-title: "The one who does not love me,
-
-He will become a frog
-
-And he will jump jump a..."
-pubDate: "Sep 19"
+pubDate: Sep 19
 dayOfYear: 263
-source: "Yoruba of Nigeria childrens song"
-type: "quote"
+source: Yoruba of Nigeria childrens song
+type: quote
 ---
 
 The one who does not love me,

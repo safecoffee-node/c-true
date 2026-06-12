@@ -1,38 +1,21 @@
 ---
-title: "Thank you my daughter
-
-who fetches me firewood."
-pubDate: "Sep 12"
+pubDate: Sep 12
 dayOfYear: 256
-source: ""
-type: "quote"
+source: ''
+type: quote
 ---
 
-Thank you my daughter
+Thank you my daughter who fetches me firewood.
 
-who fetches me firewood.
+There were two people who were in seclusion who won the raid.
 
-There were two people
+Nowadays there are no raids.
 
-who were in seclusion
+Thank you my son for winning the raid.
 
-who won the raid.
+Thank you my daughter who collects firewood for me.
 
-Nowadays
-
-there are no raids.
-
-Thank you my son
-
-for winning the raid.
-
-Thank you my daughter
-
-who collects firewood for me.
-
-Nowadays
-
-there are no raids.
+Nowadays there are no raids.
 
 Education is the raid
 

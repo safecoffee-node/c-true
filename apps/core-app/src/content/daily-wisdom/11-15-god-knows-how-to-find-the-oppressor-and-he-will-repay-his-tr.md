@@ -1,11 +1,8 @@
 ---
-title: "God knows how to find the oppressor,
-
-And he will repay his transgressions wi..."
-pubDate: "Nov 15"
+pubDate: Nov 15
 dayOfYear: 320
-source: "King Merikare, an ancient"
-type: "ancient"
+source: King Merikare, an ancient
+type: ancient
 ---
 
 God knows how to find the oppressor,

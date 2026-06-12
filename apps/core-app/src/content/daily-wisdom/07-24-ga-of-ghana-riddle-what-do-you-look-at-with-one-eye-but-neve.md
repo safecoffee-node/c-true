@@ -1,14 +1,9 @@
 ---
-title: "Ga of Ghana riddle:
-
-What do you look at with one eye, but never with two?"
-pubDate: "Jul 24"
+pubDate: Jul 24
 dayOfYear: 206
-source: ""
-type: "riddle"
+source: 'Ga of Ghana riddle:'
+type: riddle
 ---
-
-Ga of Ghana riddle:
 
 What do you look at with one eye, but never with two?
 

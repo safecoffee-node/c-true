@@ -1,17 +1,9 @@
 ---
-title: "Machozi Ya Huba
-
-Tears of Love
-
-Machozi ya huba
-
-Tears of love
-
-yamenidondoka..."
-pubDate: "Jul 08"
+pubDate: Jul 08
 dayOfYear: 190
-source: ""
-type: "quote"
+source: ''
+location: Unity Day, Zambia trickle down my face,
+type: quote
 ---
 
 Machozi Ya Huba
@@ -20,76 +12,28 @@ Tears of Love
 
 Machozi ya huba
 
-Tears of love
+Tears of love yamenidondoka sili nikashiba nikafurahika wangu mahububu ameshanitoka.
 
-yamenidondoka
+Ameshanitoka mpenzi jamini msitu na nyika chozi kifuant ninahangaika wala simuoni
 
-sili nikashiba
+Wala simuonti sijui aliko anipa mashaka na masikitiko.
 
-nikafurahika
+Sauti naghani ajue niliko.
 
-wangu mahububu
+I do not eat enough and it pleases me not.
 
-ameshanitoka.
+My beloved has deserted me.
 
-Ameshanitoka
+She has deserted me, my darling, comrades!
 
-mpenzi jamini
+The forest and the savannah, a sob in my throat.
 
-msitu na nyika
-
-chozi kifuant
-
-ninahangaika
-
-wala simuoni
-
-Wala simuonti
-
-sijui aliko
-
-anipa mashaka
-
-na masikitiko.
-
-Sauti naghani
-
-ajue niliko.
-
-Unity Day, Zambia
-
-trickle down my face,
-
-I do not eat enough
-
-and it pleases me not.
-
-My beloved
-
-has deserted me.
-
-She has deserted me,
-
-my darling, comrades!
-
-The forest and the savannah,
-
-a sob in my throat.
-
-I am distraught
-
-for I do not see her.
+I am distraught for I do not see her.
 
 I do not see her,
 
-I do not know where she is,
+I do not know where she is, she gives me sorrow, and regret.
 
-she gives me sorrow,
-
-and regret.
-
-I sing with all my voice
-
-so that she may know where I am.
+I sing with all my voice so that she may know where I am.
 
 Old Swahili love song

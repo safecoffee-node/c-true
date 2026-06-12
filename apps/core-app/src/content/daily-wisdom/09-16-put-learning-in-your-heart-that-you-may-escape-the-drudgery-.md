@@ -1,11 +1,8 @@
 ---
-title: "Put learning in your heart,
-
-That you may escape the drudgery of hard labor."
-pubDate: "Sep 16"
+pubDate: Sep 16
 dayOfYear: 260
-source: "Advice from Exhortations, ancient Egyptian texts used to"
-type: "ancient"
+source: Advice from Exhortations, ancient Egyptian texts used to
+type: ancient
 ---
 
 Put learning in your heart,
@@ -26,6 +23,4 @@ Set your heart on learning,
 
 That you may direct the work of the world.
 
-Advice from Exhortations, ancient Egyptian texts used to
-
-teach writing in scribal schools
+Advice from Exhortations, ancient Egyptian texts used to teach writing in scribal schools

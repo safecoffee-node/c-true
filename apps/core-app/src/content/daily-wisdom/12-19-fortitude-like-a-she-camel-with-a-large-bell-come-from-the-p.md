@@ -1,13 +1,8 @@
 ---
-title: "Fortitude
-
-Like a she-camel with a large bell
-
-Come from the plateau and uppe..."
-pubDate: "Dec 19"
+pubDate: Dec 19
 dayOfYear: 354
-source: "Somali poem"
-type: "poem"
+source: Somali poem
+type: poem
 ---
 
 Fortitude
@@ -41,5 +36,3 @@ I have broken my right hip,
 I have something in my eye,
 
 And yet I go on.
-
-Anonymous Somali poem

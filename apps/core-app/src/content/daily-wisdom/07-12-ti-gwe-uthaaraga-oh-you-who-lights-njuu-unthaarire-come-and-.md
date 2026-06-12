@@ -1,15 +1,9 @@
 ---
-title: "Ti gwe Uthaaraga;
-
-Oh, you who lights;
-
-Njuu unthaarire;
-
-Come and light for ..."
-pubDate: "Jul 12"
+pubDate: Jul 12
 dayOfYear: 194
-source: "Traditional Meru of Kenya poem"
-type: "poem"
+source: Traditional Meru of Kenya poem
+location: Independence Day, Sao Tom and Principe
+type: poem
 ---
 
 Ti gwe Uthaaraga;
@@ -35,7 +29,3 @@ And light for other people;
 Baria ukenda.
 
 Those you may like.
-
-Traditional Meru of Kenya poem in praise of the rising sun
-
-Independence Day, Sao Tom and Principe

@@ -1,17 +1,9 @@
 ---
-title: "One should keep ones eyes on ones destination, not on where one
-
-stumbled."
-pubDate: "Mar 13"
+pubDate: Mar 13
 dayOfYear: 73
-source: "Yoruba of Nigeria proverb"
-type: "proverb"
+source: Yoruba of Nigeria proverb
+location: Festival mask from Nigeria
+type: proverb
 ---
 
-One should keep ones eyes on ones destination, not on where one
-
-stumbled.
-
-Yoruba of Nigeria proverb
-
-Festival mask from Nigeria
+One should keep ones eyes on ones destination, not on where one stumbled.

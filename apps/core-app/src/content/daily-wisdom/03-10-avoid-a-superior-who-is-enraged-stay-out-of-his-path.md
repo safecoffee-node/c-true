@@ -1,11 +1,9 @@
 ---
-title: "Avoid a superior who is enraged,
-
-Stay out of his path."
-pubDate: "Mar 10"
+pubDate: Mar 10
 dayOfYear: 70
-source: "Kenneth Kaunda, first president of Zambia"
-type: "ancient"
+source: Kenneth Kaunda, first president of Zambia
+location: Youth Day, Zambia; Commonwealth Day, Swaziland (date varies)
+type: ancient
 ---
 
 Avoid a superior who is enraged,
@@ -24,24 +22,10 @@ Because his heart received your soothing words.
 
 Therefore, seek out silence and submission.
 
-Advice from the Wisdom of Ani, an ancient Egyptian
-
-text believed to have been written by a scribe of the
-
-house of Neferkareteri during the Eighteenth Dynasty
-
-(1570-c. 1342 B.C.)
+Advice from the Wisdom of Ani, an ancient Egyptian text believed to have been written by a scribe of the house of Neferkareteri during the Eighteenth Dynasty (1570-c. 1342 B.C.)
 
 VAVAVAVAVAVAVAVY
 
 March 11
 
-The moment you have protected an individual, you have protected
-
-society.
-
-Kenneth Kaunda, first president of Zambia
-
-Youth Day, Zambia
-
-Commonwealth Day, Swaziland (date varies)
+The moment you have protected an individual, you have protected society.

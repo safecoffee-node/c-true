@@ -1,13 +1,9 @@
 ---
-title: "There at the edge of town
-
-Just by the burial ground
-
-Stands the house withou..."
-pubDate: "Feb 18"
+pubDate: Feb 18
 dayOfYear: 49
-source: "Lenrie Peters, Gambian poet. Home Coming"
-type: "quote"
+source: Lenrie Peters, Gambian poet. Home Coming
+location: Independence Day, Gambia
+type: quote
 ---
 
 There at the edge of town
@@ -25,7 +21,3 @@ To greet us on the home coming
 After we have paced the world.
 
 And longed for returning.
-
-Lenrie Peters, Gambian poet. Home Coming
-
-Independence Day, Gambia

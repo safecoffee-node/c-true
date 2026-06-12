@@ -1,13 +1,11 @@
 ---
-title: "We were here when trouble came to our people;
-
-For this reason Yancy came to ..."
-pubDate: "May 14"
+pubDate: May 14
 dayOfYear: 135
-source: "president of Liberia at the time
+source: 'president of Liberia at the time
 
-National Unification Day, Liberia"
-type: "quote"
+  National Unification Day, Liberia'
+location: National Unification Day, Liberia
+type: quote
 ---
 
 We were here when trouble came to our people;
@@ -42,10 +40,6 @@ Waiting for the return
 
 Yancy, why?
 
-Wadebo of Liberia song referring to boys being sent into forced
-
-labor on the island of Fernando Po in the early 1900s; Allen N.
+Wadebo of Liberia song referring to boys being sent into forced labor on the island of Fernando Po in the early 1900s; Allen N.
 
 Yancy was the vice president of Liberia at the time
-
-National Unification Day, Liberia

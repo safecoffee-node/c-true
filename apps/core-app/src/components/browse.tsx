@@ -13,7 +13,7 @@ export function Browse() {
     const month = triggerDate.getMonth() + 1;
     const day = triggerDate.getDate();
     console.log(modifiers);
-    navigate(`/browse/${year}-${month}-${day}`);
+    navigate(`/browse/${month}-${day}`);
   };
 
   return (

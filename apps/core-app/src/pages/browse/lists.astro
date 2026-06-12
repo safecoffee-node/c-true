@@ -1,0 +1,52 @@
+---
+import Layout from "@/layouts/Layout.astro";
+import { getCollection } from "astro:content";
+
+const docs = await getCollection("daily-wisdom");
+
+const sorted = docs.sort((a, b) => a.data.dayOfYear - b.data.dayOfYear);
+
+const groups = Object.groupBy(sorted, (item) =>
+  new Intl.DateTimeFormat("en", { month: "long" }).format(
+    new Date(item.data.pubDate),
+  ),
+);
+---
+
+<Layout>
+  <div class="">
+    {
+      Object.entries(groups).map(([month, items]) => (
+        <section class="flex flex-col gap-2 mt-15">
+          <span class="text-sm w-fit leading-none -ml-2 bg-foreground text-secondary rounded-full px-2 py-1">
+            {month}
+          </span>
+          <div class="divide divide-y">
+            {items?.map((item) => {
+              const date = new Intl.DateTimeFormat("en", {
+                month: "short",
+                day: "2-digit",
+              }).format(new Date(item.data.pubDate));
+
+              return (
+                <article class="grid grid-cols-6 py-3">
+                  <span class="date font-oblique">{date}</span>
+                  <div class="col-span-5 hover:bg-secondary px-3 -ml-3 rounded-lg">
+                    <span class="entry-title">
+                      <a
+                        class="after:hidden truncate w-full"
+                        href={`/browse/${item.id}`}
+                      >
+                        {item?.data.source}
+                      </a>
+                    </span>
+                  </div>
+                </article>
+              );
+            })}
+          </div>
+        </section>
+      ))
+    }
+  </div>
+</Layout>

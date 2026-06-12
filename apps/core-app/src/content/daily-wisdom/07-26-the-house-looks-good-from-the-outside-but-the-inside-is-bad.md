@@ -1,15 +1,10 @@
 ---
-title: "The house looks good from the outside, but the inside is bad."
-pubDate: "Jul 26"
+pubDate: Jul 26
 dayOfYear: 208
-source: ""
-type: "expression"
+source: Vai of Liberia expression for someone who has an impressive appearance, but
+  has a bad character
+location: Independence Day, Liberia
+type: expression
 ---
 
 The house looks good from the outside, but the inside is bad.
-
-Vai of Liberia expression for someone who has an impressive
-
-appearance, but has a bad character
-
-Independence Day, Liberia

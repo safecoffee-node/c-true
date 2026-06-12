@@ -2,15 +2,34 @@
 import { Spinner } from "@/components/ui/spinner";
 import Layout from "@/layouts/Layout.astro";
 import { Browse } from "@/components/browse.tsx";
+import NavItem from "@/components/NavItem.astro";
+
+const links = [
+  {
+    label: "full-text",
+    href: "/browse/full-text",
+  },
+  {
+    label: "lists",
+    href: "/browse/lists",
+  },
+];
+const { pathname } = Astro.url;
 ---
 
 <Layout>
   <div class="m-auto flex flex-col items-center justify-center gap-10">
     <nav>
-      <ul>
-        <li class="text-sm">
-          <a href="/browse/full-text" class="after:hidden">full-text</a>
-        </li>
+      <ul class="flex items-center gap-2">
+        {
+          links.map((item) => (
+            <NavItem
+              active={pathname.startsWith(item.href)}
+              label={item.label}
+              href={item.href}
+            />
+          ))
+        }
       </ul>
     </nav>
     <Browse client:only="react">

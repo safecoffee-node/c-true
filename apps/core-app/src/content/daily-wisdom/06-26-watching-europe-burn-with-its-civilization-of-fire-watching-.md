@@ -1,29 +1,14 @@
 ---
-title: "Watching Europe burn with its
-
-civilization of fire,
-
-Watching America disint..."
-pubDate: "Jun 26"
+pubDate: Jun 26
 dayOfYear: 178
-source: "Zulu Poem"
-type: "quote"
+source: Mazisi Kunene, South African poet, excerpt from Thought on
+type: quote
 ---
 
-Watching Europe burn with its
+Watching Europe burn with its civilization of fire,
 
-civilization of fire,
+Watching America disintegrate with its gods of steel,
 
-Watching America disintegrate
-
-with its gods of steel,
-
-Watching the persecutors of
-
-mankind turn into dust,
+Watching the persecutors of mankind turn into dust,
 
 Was I wrong? Was I wrong?
-
-Mazisi Kunene, South African poet, excerpt from Thought on
-
-June 26, Zulu Poems, 1970.

@@ -1,15 +1,8 @@
 ---
-title: "Nkosi sikeleiAfrica
-
-God bless Africa
-
-Maluphakaniswuponso Iwayo
-
-Raise up he..."
-pubDate: "Feb 07"
+pubDate: Feb 07
 dayOfYear: 38
-source: ""
-type: "proverb"
+source: AFRICAN PROVERBS AND WiSDOM
+type: proverb
 ---
 
 Nkosi sikeleiAfrica
@@ -38,15 +31,11 @@ Bless also the young
 
 Ulitwalilizwe ngomonde
 
-That they may carry the land
-
-with patience
+That they may carry the land with patience
 
 Uwusikilele
 
 And that you may bless them
-
-AFRICAN PROVERBS AND WiSDOM
 
 Sikelelamalinga etu
 
@@ -58,9 +47,7 @@ To unite and lift ourselves up
 
 Awemfundo nemvisiswano
 
-Through learning and
-
-understanding
+Through learning and understanding
 
 Uwasikelele
 

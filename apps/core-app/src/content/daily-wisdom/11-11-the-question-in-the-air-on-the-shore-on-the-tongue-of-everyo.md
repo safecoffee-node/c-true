@@ -1,24 +1,14 @@
 ---
-title: "The question in the air
-
-on the shore
-
-on the tongue of everyone
-
-Luanda, whe..."
-pubDate: "Nov 11"
+pubDate: Nov 11
 dayOfYear: 316
-source: "sh
+source: 'sh
 
-Luandino Vieira, Angolan poet. From Song for Luanda"
-type: "quote"
+  Luandino Vieira, Angolan poet. From Song for Luanda'
+location: Independence Day, Angola
+type: quote
 ---
 
-The question in the air
-
-on the shore
-
-on the tongue of everyone
+The question in the air on the shore on the tongue of everyone
 
 Luanda, where are you?
 
@@ -28,32 +18,12 @@ Silence on the tongues
 
 Silence in the eyes
 
-Hey
-
-sister Rose the fishwife
-
-can you tell?
+Hey sister Rose the fishwife can you tell?
 
 Brother
 
-I cant tell
+I cant tell have to sell rush around the city if you want to eat!
 
-have to sell
+Lu-u-nch, choose your lu-u-u-nch sprats or mackerel fine fish, fine fi-i-i-sh
 
-rush around the city
-
-if you want to eat!
-
-Lu-u-nch, choose your lu-u-u-nch
-
-sprats or mackerel
-
-fine fish, fine fi-i-i-sh
-
-Luandino Vieira, Angolan poet. From Song for Luanda
-
-Independence Day, Angola
-
-Nso Cultural Week, Kumbo, Cameroon (features wild-horse races through the
-
-towns streets)
+Nso Cultural Week, Kumbo, Cameroon (features wild-horse races through the towns streets)

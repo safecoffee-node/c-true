@@ -1,16 +1,12 @@
 ---
-title: "Ethiopia is a land where the great unknown yonder still exists in
-
-plenty."
-pubDate: "Jan 19"
+pubDate: Jan 19
 dayOfYear: 19
-source: ""
-type: "quote"
+source: ''
+location: Timket (Eastern Orthodox Epiphany), Ethiopia, Eritrea
+type: quote
 ---
 
-Ethiopia is a land where the great unknown yonder still exists in
-
-plenty.
+Ethiopia is a land where the great unknown yonder still exists in plenty.
 
 Slogan written on Ethiopian airlines tickets
 
@@ -19,5 +15,3 @@ Slogan written on Ethiopian airlines tickets
 Slogan used by Ethiopian tourist posters. Refers to the
 
 Ethiopian calendar, which has thirteen months
-
-Timket (Eastern Orthodox Epiphany), Ethiopia, Eritrea

@@ -1,27 +1,14 @@
 ---
-title: "What a day, when the morning air does not resound with the
-
-pounding of yams!"
-pubDate: "Jul 18"
+pubDate: Jul 18
 dayOfYear: 200
-source: "Traditional Yoruba of Nigeria poem"
-type: "poem"
+source: Traditional Yoruba of Nigeria poem
+type: poem
 ---
 
-What a day, when the morning air does not resound with the
+What a day, when the morning air does not resound with the pounding of yams!
 
-pounding of yams!
+What a day, when I listened in vain to hear them sift the flour!
 
-What a day, when I listened in vain to hear them sift the
+When the frying pots do not simmer with the fricassee of rabbits and birds.
 
-flour!
-
-When the frying pots do not simmer with the fricassee of
-
-rabbits and birds.
-
-What a day, when the expert wakes up under the shadow of
-
-starvation!
-
-Traditional Yoruba of Nigeria poem
+What a day, when the expert wakes up under the shadow of starvation!

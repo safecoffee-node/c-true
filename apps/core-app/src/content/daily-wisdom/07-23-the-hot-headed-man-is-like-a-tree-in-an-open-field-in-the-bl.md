@@ -1,11 +1,9 @@
 ---
-title: "The hot-headed man is like a tree in an open field;
-
-In the blast of a moment..."
-pubDate: "Jul 23"
+pubDate: Jul 23
 dayOfYear: 205
-source: ""
-type: "ancient"
+source: Nineteenth Dynasty, c. 1200 B.c.
+location: Revolution Day, Egypt
+type: ancient
 ---
 
 The hot-headed man is like a tree in an open field;
@@ -33,7 +31,3 @@ Until the day it dies in its own grove.
 Advice from the Teaching of Amen-em-opet, an ancient
 
 Egyptian text believed to have been written during the
-
-Nineteenth Dynasty, c. 1200 B.c.
-
-Revolution Day, Egypt

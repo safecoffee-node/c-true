@@ -1,13 +1,8 @@
 ---
-title: "My brother is there
-
-I can hear the bells of his camels
-
-When they graze down..."
-pubDate: "Jul 02"
+pubDate: Jul 02
 dayOfYear: 184
-source: "Somali poem"
-type: "poem"
+source: Somali poem
+type: poem
 ---
 
 My brother is there
@@ -31,9 +26,5 @@ And my Allah is his Allah.
 My brother is there
 
 And he cannot come to me.
-
-Anonymous Somali poem. The poet regrets being unable to
-
-cross the border after Somalia loses a war with neighboring
 
 Ethiopia

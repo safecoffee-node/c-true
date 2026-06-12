@@ -1,19 +1,14 @@
 ---
-title: "Africa my Africa
-
-Africa of proud warriors or ancestral savannahs
-
-Africa tha..."
-pubDate: "Feb 21"
+pubDate: Feb 21
 dayOfYear: 52
-source: "have never known you
+source: 'have never known you
 
-But my face is full of your blood
+  But my face is full of your blood
 
-Your beautiful black blood which water the wide fields
+  Your beautiful black blood which water the wide fields
 
-David Mandessi Diop, Senegalese poet. First stanza of"
-type: "quote"
+  David Mandessi Diop, Senegalese poet. First stanza of'
+type: quote
 ---
 
 Africa my Africa

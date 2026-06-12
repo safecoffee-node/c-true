@@ -1,11 +1,8 @@
 ---
-title: "Plant shade trees around the edge of your pond,
-
-And let your spirit rest und..."
-pubDate: "Feb 16"
+pubDate: Feb 16
 dayOfYear: 47
-source: ""
-type: "ancient"
+source: ''
+type: ancient
 ---
 
 Plant shade trees around the edge of your pond,
@@ -18,9 +15,7 @@ Take hold of the opportunities of this world,
 
 But give bread to the man without a field,
 
-That you may assure yourself a good name for all
-
-eternity.
+That you may assure yourself a good name for all eternity.
 
 Advice of Neferhotep, a high priest of Amon, ancient Egypt
 

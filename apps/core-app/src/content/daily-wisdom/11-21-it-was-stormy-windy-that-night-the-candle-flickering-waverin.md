@@ -1,21 +1,14 @@
 ---
-title: "It was stormy windy that night
-
-The candle flickering,
-
-Wavering,
-
-Softening ..."
-pubDate: "Nov 21"
+pubDate: Nov 21
 dayOfYear: 326
-source: "Flame
+source: 'Flame
 
-Wick
+  Wick
 
-Wax
+  Wax
 
-Grace Birabwa Isharaza, Ugandan poet. From Candle-light"
-type: "quote"
+  Grace Birabwa Isharaza, Ugandan poet. From Candle-light'
+type: quote
 ---
 
 It was stormy windy that night

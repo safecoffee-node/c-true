@@ -1,13 +1,9 @@
 ---
-title: "I put a date in his mouth, and he puts a stick in my eye!"
-pubDate: "Apr 24"
+pubDate: Apr 24
 dayOfYear: 115
-source: "Tunisian expression"
-type: "expression"
+source: Tunisian expression
+location: Victory Day, Togo
+type: expression
 ---
 
 I put a date in his mouth, and he puts a stick in my eye!
-
-Tunisian expression for ingratitude
-
-Victory Day, Togo

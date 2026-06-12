@@ -1,11 +1,8 @@
 ---
-title: "Let us not run the world hastily;
-
-Let us not grasp at the rope of wealth imp..."
-pubDate: "Mar 07"
+pubDate: Mar 07
 dayOfYear: 67
-source: ""
-type: "quote"
+source: ''
+type: quote
 ---
 
 Let us not run the world hastily;

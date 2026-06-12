@@ -1,11 +1,8 @@
 ---
-title: "He who tells the truth is not well liked."
-pubDate: "Nov 22"
+pubDate: Nov 22
 dayOfYear: 327
-source: "Bambara of West Africa proverb"
-type: "proverb"
+source: Bambara of West Africa proverb
+type: proverb
 ---
 
 He who tells the truth is not well liked.
-
-Bambara of West Africa proverb

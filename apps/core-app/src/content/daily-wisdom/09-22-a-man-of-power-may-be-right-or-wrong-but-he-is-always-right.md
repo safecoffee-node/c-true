@@ -1,18 +1,12 @@
 ---
-title: "A man of power may be right or wrong, but he is always right."
-pubDate: "Sep 22"
+pubDate: Sep 22
 dayOfYear: 266
-source: "Bambara of West Africa proverb"
-type: "proverb"
+source: Bambara of West Africa proverb
+location: Independence Day, Mali x SS
+type: proverb
 ---
 
 A man of power may be right or wrong, but he is always right.
-
-Bambara of West Africa proverb
-
-Independence Day, Mali
-
-x SS
 
 DWH
 
@@ -20,9 +14,7 @@ RSs
 
 SRS
 
-SSS
-
-ww SSS
+SSS ww SSS
 
 SSS
 

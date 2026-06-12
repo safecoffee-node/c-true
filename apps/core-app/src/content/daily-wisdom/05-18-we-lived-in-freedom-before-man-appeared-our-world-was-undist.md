@@ -1,15 +1,8 @@
 ---
-title: "We lived in freedom
-
-Before man appeared:
-
-Our world was undisturbed,
-
-One da..."
-pubDate: "May 18"
+pubDate: May 18
 dayOfYear: 139
-source: "traditional Ghanaian poem"
-type: "poem"
+source: traditional Ghanaian poem
+type: poem
 ---
 
 We lived in freedom
@@ -31,5 +24,3 @@ He pursued us
 With greed and envy:
 
 Our freedom vanished.
-
-Song of the Turtle, traditional Ghanaian poem
