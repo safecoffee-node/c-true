@@ -1,7 +1,5 @@
 ---
-title: "The speech of a man which is beautiful and understood is better
-
-than the spe..."
+title: "The speech of a man which is beautiful and understood is better than the spe..."
 pubDate: "Jul 09"
 dayOfYear: 191
 source: "Moroccan proverb"

@@ -1,0 +1,21 @@
+---
+interface Props {
+  href: string;
+  label: string;
+  active: boolean;
+}
+
+const { href, label, active = false } = Astro.props;
+---
+
+<li
+  class:list={[
+    "transition cursor-pointer px-3 py-2 rounded-full hover:bg-border text-sm",
+    { "bg-primary-foreground": active },
+  ]}
+>
+  <a
+    class="no-underline! after:hidden flex items-center justify-center leading-none"
+    href={href}>{label}</a
+  >
+</li>

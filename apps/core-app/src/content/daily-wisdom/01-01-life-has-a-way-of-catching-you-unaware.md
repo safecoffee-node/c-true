@@ -2,7 +2,7 @@
 title: "Life has a way of catching you unaware."
 pubDate: "Jan 01"
 dayOfYear: 1
-source: "Laila Said, Egyptian playwright, director, and teacher. From A"
+source: "Laila Said, Egyptian playwright, director, and teacher. From A Bridge Through Time: A Memoir, 1985."
 type: "quote"
 ---
 

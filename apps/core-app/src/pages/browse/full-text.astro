@@ -1,0 +1,56 @@
+---
+import Layout from "@/layouts/Layout.astro";
+import { cleanBody } from "@/lib/daily-wisdom.ts";
+import { getCollection } from "astro:content";
+const docs = await getCollection("daily-wisdom");
+const today = new Date().toISOString().split("T")[0];
+const currentDate = today;
+const locale = Astro.currentLocale ?? "en";
+---
+
+<Layout>
+
+    <div class="divide divide-y">
+ {docs.map(item => (
+<article class="flex flex-col gap-8 pt-5 md:pb-10">
+    <div class="w-full flex items-center justify-center">
+      <time>
+        {
+          new Intl.DateTimeFormat(locale, {
+            timeZone: (Astro.request.cf?.timezone as string) ?? "UTC",
+            month: "long",
+            day: "numeric",
+          }).format(new Date(item.data.pubDate))
+        }
+      </time>
+    </div>
+    <header class="flex flex-col gap-2">
+      <div class="flex items-center justify-center gap-2">
+        <h1 class="font-medium text-center text-2xl">
+          {item?.data.source}
+        </h1>
+      </div>
+      <div class="flex flex-col">
+        <!-- <TimeFormat /> -->
+      </div>
+      <div
+        class="prose prose-neutral dark:prose-invert prose-figcaption:text-muted-foreground prose-figcaption:-mt-3 prose-figcaption:mb-8 prose-figcaption:max-w-xl prose-figcaption:text-sm prose-img:mt-2 prose-ul:font-serif max-w-none"
+      >
+        <div class="grid grid-cols-1 gap-50">
+          <div class="flex flex-col">
+            <p class="text-foreground mb-6 font-serif text-[17px] leading-[26px] font-light">
+                    {cleanBody(item.body ?? "") }
+            </p>
+          {item.data.source && 
+           <p class="text-foreground mb-6 font-serif text-[17px] leading-[26px] font-light">
+            __{item.data.source}
+           </p>
+          }
+          </div>
+        </div>
+      </div>
+    </header>
+  </article>
+ ))}
+ </div>
+</Layout>

@@ -6,55 +6,58 @@ import { Clock } from "@/components/clock.tsx";
 import { Spinner } from "@/components/ui/spinner.tsx";
 import { Skeleton } from "@/components/ui/skeleton.tsx";
 import TimeFormat from "@/components/TimeFormat.astro";
+import { todayPubDate, cleanBody } from "@/lib/daily-wisdom";
 
-export async function getDailyItem() {
-  const items = await getCollection("quotes");
-  const flattensItems = items.flatMap((item) =>
-    Object.values(item.data.themes).flatMap((t) => t.citations),
-  );
-  const today = new Date().toISOString().split("T")[0];
-  return flattensItems.find((c) => c.publishAt.includes(today));
-}
-const item = await getDailyItem();
+const allWisdom = await getCollection("daily-wisdom");
+const item = allWisdom.find((e) => e.data.pubDate === todayPubDate());
+const paragraphs = item ? cleanBody(item.body ?? "") : [];
 const today = new Date().toISOString().split("T")[0];
-const currentDate = item?.publishAt.find((d) => d === today);
+const currentDate = today;
 const locale = Astro.currentLocale ?? "en";
 ---
 
 <Layout>
   <article class="flex flex-col gap-8 md:pb-64">
+    <div class="w-full flex items-center justify-center">
+      <time>
+        {
+          new Intl.DateTimeFormat(locale, {
+            timeZone: (Astro.request.cf?.timezone as string) ?? "UTC",
+            month: "long",
+            day: "numeric",
+            year: "numeric",
+          }).format(new Date(currentDate ?? 0))
+        }
+      </time>
+    </div>
     <header class="flex flex-col gap-2">
-      <div class="flex items-center gap-2">
-        <h1 class="font-medium font-serif">
-          {item?.source_originale ? item?.source_originale : item?.source}
+      <div class="flex items-center justify-center gap-2">
+        <h1 class="font-medium text-2xl">
+          {item?.data.source}
         </h1>
       </div>
       <div class="flex flex-col">
-        <time>
-          {
-            new Intl.DateTimeFormat(locale, {
-              timeZone: (Astro.request.cf?.timezone as string) ?? "UTC",
-              month: "long",
-              day: "numeric",
-              year: "numeric",
-            }).format(new Date(currentDate ?? 0))
-          }
-        </time>
-        <TimeFormat />
+        <!-- <TimeFormat /> -->
       </div>
       <div
         class="prose prose-neutral dark:prose-invert prose-figcaption:text-muted-foreground prose-figcaption:-mt-3 prose-figcaption:mb-8 prose-figcaption:max-w-xl prose-figcaption:text-sm prose-img:mt-2 prose-ul:font-serif max-w-none"
       >
         <div class="grid grid-cols-1 gap-50">
           <div class="flex flex-col">
-            <p
-              class="text-foreground mb-6 font-serif text-[17px] leading-[26px] font-light"
-            >
-              {item?.citation}
-            </p>
-            <p class="text-right font-serif text-muted-foreground">
-              — {item?.auteur}.
-            </p>
+            {
+              paragraphs.map((p) => (
+                <p class="text-foreground mb-6 font-serif text-[17px] leading-[26px] font-light">
+                  {p}
+                </p>
+              ))
+            }
+            {
+              item?.data.source ? (
+                <p class="text-right font-serif text-muted-foreground">
+                  — {item.data.source}.
+                </p>
+              ) : null
+            }
           </div>
         </div>
       </div>

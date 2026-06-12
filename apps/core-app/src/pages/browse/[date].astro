@@ -4,30 +4,43 @@ import TimeFormat from "@/components/TimeFormat.astro";
 import { Spinner } from "@/components/ui/spinner";
 import Layout from "@/layouts/Layout.astro";
 import { getCollection } from "astro:content";
+import { dateToPubDate, cleanBody } from "@/lib/daily-wisdom";
 
 export async function getStaticPaths() {
-  const paths = [];
-  for (const year of [2025, 2026]) {
-    for (let month = 1; month <= 12; month++) {
-      const daysInMonth = new Date(year, month, 0).getDate();
-      for (let day = 1; day <= daysInMonth; day++) {
-        paths.push({ params: { date: `${year}-${month}-${day}` } });
-      }
-    }
-  }
-  return paths;
+  const MONTHS = [
+    "Jan",
+    "Feb",
+    "Mar",
+    "Apr",
+    "May",
+    "Jun",
+    "Jul",
+    "Aug",
+    "Sep",
+    "Oct",
+    "Nov",
+    "Dec",
+  ];
+
+  const entries = await getCollection("daily-wisdom");
+  return entries.flatMap((entry) => {
+    const [monthStr, dayStr] = entry.data.pubDate.split(" ");
+    const month = MONTHS.indexOf(monthStr) + 1;
+    const day = parseInt(dayStr);
+    return [2025, 2026].map((year) => ({
+      params: { date: `${year}-${month}-${day}` },
+    }));
+  });
 }
 
 const { date } = Astro.params;
 const [year, month, day] = date.split("-").map(Number);
 const dateStr = `${year}-${String(month).padStart(2, "0")}-${String(day).padStart(2, "0")}`;
+const pubDate = dateToPubDate(year, month, day);
 
-const items = await getCollection("quotes");
-const allCitations = items.flatMap((item) =>
-  Object.values(item.data.themes).flatMap((t) => t.citations),
-);
-
-const quote = allCitations.find((c) => c.publishAt.includes(dateStr));
+const allWisdom = await getCollection("daily-wisdom");
+const item = allWisdom.find((e) => e.data.pubDate === pubDate);
+const paragraphs = item ? cleanBody(item.body ?? "") : [];
 const today = new Date().toISOString().split("T")[0];
 
 const currentDate = new Date(dateStr).toLocaleDateString("en-US", {
@@ -41,37 +54,45 @@ const timeZone = (Astro.request.cf?.timezone as string) ?? "UTC";
 
 <Layout>
   <article class="flex flex-col gap-8 md:pb-64">
+    <div class="w-full flex items-center justify-center">
+      <time>
+        {
+          new Intl.DateTimeFormat(locale, {
+            timeZone: (Astro.request.cf?.timezone as string) ?? "UTC",
+            month: "long",
+            day: "numeric",
+            year: "numeric",
+          }).format(new Date(currentDate ?? 0))
+        }
+      </time>
+    </div>
     <header class="flex flex-col gap-2">
-      <div class="flex items-center gap-2">
-        <h1 class="font-medium font-serif">
-          {quote?.source_originale ? quote?.source_originale : quote?.source}
+      <div class="flex items-center justify-center gap-2">
+        <h1 class="font-medium text-center text-2xl">
+          {item?.data.source || item?.data.type}
         </h1>
       </div>
       <div class="flex flex-col">
-        <time>
-          {
-            new Intl.DateTimeFormat(locale, {
-              timeZone: (Astro.request.cf?.timezone as string) ?? "UTC",
-              month: "long",
-              day: "numeric",
-              year: "numeric",
-            }).format(new Date(currentDate))
-          }
-        </time>
-        <TimeFormat />
+        <!-- <TimeFormat /> -->
       </div>
     </header>
     <div class="prose prose-neutral dark:prose-invert ...">
       <div class="grid grid-cols-1 gap-50">
         <div class="flex flex-col">
-          <p
-            class="text-foreground mb-6 font-serif text-[17px] leading-[26px] font-light"
-          >
-            {quote?.citation_originale}
-          </p>
-          <p class="text-right font-serif text-muted-foreground">
-            — {quote?.auteur}.
-          </p>
+          {
+            paragraphs.map((p) => (
+              <p class="text-foreground mb-6 font-serif text-[17px] leading-[26px] font-light">
+                {p}
+              </p>
+            ))
+          }
+          {
+            item?.data.source ? (
+              <p class="text-right font-serif text-muted-foreground">
+                — {item.data.source}.
+              </p>
+            ) : null
+          }
         </div>
       </div>
     </div>
