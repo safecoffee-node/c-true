@@ -1,7 +1,7 @@
 ---
 pubDate: Jan 23
 dayOfYear: 23
-source: Moroccan proverb
+source: "Moroccan proverb on patriotism"
 type: proverb
 ---
 

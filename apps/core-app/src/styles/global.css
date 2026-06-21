@@ -188,12 +188,32 @@ body {
   }
 }
 
+@theme {
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+}
+
 @layer components {
   .attribution {
-    @apply text-center italic text-muted-foreground;
+    @apply text-center italic font-sans text-sm;
   }
 
   .prose .no-bullets {
     list-style: none !important;
   }
+}
+
+.font-inter {
+  line-height: 1;
+}
+
+.font-inter::before {
+  content: "";
+  margin-bottom: -0.1362em;
+  display: table;
+}
+
+.font-inter::after {
+  content: "";
+  margin-top: -0.1362em;
+  display: table;
 }

@@ -1,9 +1,7 @@
 ---
 pubDate: Jan 21
 dayOfYear: 21
-source: 'Yoruba of Nigeria proverb
-
-  AFRICAN PROVERB'
+source: "Yoruba of Nigeria proverb AFRICAN PROVERB"
 type: proverb
 ---
 

@@ -18,7 +18,7 @@ const groups = Object.groupBy(sorted, (item) =>
     {
       Object.entries(groups).map(([month, items]) => (
         <section class="flex flex-col gap-2 mt-15">
-          <span class="text-sm w-fit leading-none -ml-2 bg-foreground text-secondary rounded-full px-2 py-1">
+          <span class="text-sm w-fit leading-none -ml-2 bg-foreground text-secondary rounded-full px-2 py-2 font-inter">
             {month}
           </span>
           <div class="divide divide-y">
