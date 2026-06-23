@@ -7,4 +7,5 @@ type: proverb
 
 Pangono - pangono kambe anafika ku Ciwambo.
 
-Little by little, the tortoise arrived at the Indian Ocean.
+<div class="attribution">Little by little, the tortoise arrived at the Indian Ocean.
+</div>

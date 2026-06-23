@@ -1,64 +1,67 @@
 ---
 pubDate: Feb 07
 dayOfYear: 38
-source: AFRICAN PROVERBS AND WiSDOM
+source: AFRICAN PROVERBS
 type: proverb
 ---
 
-Nkosi sikeleiAfrica
+<div class="grid grid-cols-2 gap-20">
+    <p>
+        Nkosi sikele’iAfrica
+        Maluphakanisw’uponso Iwayo
+        Yizwa imitandazo yetu<br/>
+        Usi - sikelele
+    </p>
+    <p>
+        God bless Africa<br />
+        Raise up her spirit<br />
+        Hear our prayers<br/>
+        And bless us
+    </p>
+</div>
 
-God bless Africa
+<div class="grid grid-cols-2 gap-20">
+    <p>
+        Sikelel’amadol’asizwe <br/>
+        Sikelela kwa nomlisela <br/>
+        Ulitwal’ilizwe ngomonde <br/>
+    </p>
+    <p>
+        Bless the leaders <br />
+        Bless also the young <br />
+        That they may carry the land with patience <br/>
+    </p>
+</div>
 
-Maluphakaniswuponso Iwayo
+<div class="grid grid-cols-2 gap-20">
+    <p>
+        Uwusikilele <br/>
+        Sikelel’amalinga etu <br/>
+        Awonayana nokuzaka <br/>
+        Awemfundo nemvisiswano <br/><br/>
+        Uwusikilele <br/>
+    </p>
+    <p>
+        And that you may bless them  <br />
+        Bless our efforts <br />
+        To unite and lift ourselves up  <br/>
+        Through learning and understanding <br/>
+        And bless them <br />
+    </p>
+</div>
 
-Raise up her spirit
+<div class="grid grid-cols-2 gap-20">
+    <p>
+        Woza Moya! (Yihla) Moya!  <br/>
+        Woza Moya Oyingcwele!  <br/>
+        Awemfundo nemvisiswano <br/>
+    </p>
+    <p>
+        Come Spirit! (Descend) Spirit! <br />
+        Come, Holy Spirit! <br/>
+    </p>
+</div>
 
-Yizwa imitandazo yetu
-
-Hear our prayers
-
-Usi - sikelele
-
-And bless us
-
-Sikelelamadolasizwe
-
-Bless the leaders
-
-Sikelela kwa nomlisela
-
-Bless also the young
-
-Ulitwalilizwe ngomonde
-
-That they may carry the land with patience
-
-Uwusikilele
-
-And that you may bless them
-
-Sikelelamalinga etu
-
-Bless our efforts
-
-Awonayana nokuzaka
-
-To unite and lift ourselves up
-
-Awemfundo nemvisiswano
-
-Through learning and understanding
-
-Uwasikelele
-
-And bless them
-
-Woza Moya! (Yihla) Moya!
-
-Come Spirit! (Descend) Spirit!
-
-Woza Moya Oyingcwele!
-
-Come, Holy Spirit!
-
-African national anthem
+<div class="attribution">
+    African national anthem
+</div>
